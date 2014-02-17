@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Strength, Agility, and Speed"
+date: 2014-02-06 20:49:51 -0600
+comments: true
+published: false
+categories:
+---
+
+Let's make some more analogies, since we can. Let's say you are an athlete, and are trying to make it into the NFL.
+Your agent says
+
+``` ruby Discover if a number is prime http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/ Source Article
+class Fixnum
+def prime?
+('1' * self) !~ /^1?$|^(11+?)\1+$/
+end
+end
+```
