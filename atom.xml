@@ -4,7 +4,7 @@
   <title><![CDATA[...]]></title>
   <link href="http://watkyn.github.io/atom.xml" rel="self"/>
   <link href="http://watkyn.github.io/"/>
-  <updated>2014-02-17T11:10:35-06:00</updated>
+  <updated>2014-02-17T11:17:18-06:00</updated>
   <id>http://watkyn.github.io/</id>
   <author>
     <name><![CDATA[Tony Eichelberger]]></name>
@@ -12,29 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Strength, Agility, and Speed]]></title>
-    <link href="http://watkyn.github.io/blog/2014/02/06/strength/"/>
-    <updated>2014-02-06T20:49:51-06:00</updated>
-    <id>http://watkyn.github.io/blog/2014/02/06/strength</id>
-    <content type="html"><![CDATA[<p>Let&rsquo;s make some more analogies, since we can. Let&rsquo;s say you are an athlete, and are trying to make it into the NFL.
-Your agent says</p>
-
-<figure class='code'><figcaption><span>Discover if a number is prime</span><a href='http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/'>Source Article</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Fixnum</span>
-</span><span class='line'><span class="k">def</span> <span class="nf">prime?</span>
-</span><span class='line'><span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">*</span> <span class="nb">self</span><span class="p">)</span> <span class="o">!~</span> <span class="sr">/^1?$|^(11+?)\1+$/</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Developer Mind and QA]]></title>
@@ -227,6 +204,15 @@ So I tried an experiment and put multiple [<span class="blsp-spelling-error" id=
     <updated>2009-05-22T16:17:24-05:00</updated>
     <id>http://watkyn.github.io/blog/2009/05/22/Pattern-of-the-week-Builder</id>
     <content type="html"><![CDATA[<p>The intent of the BUILDER pattern is to move the construction logic for an object outside the class to be instantiated.<br />A builder class offloads construction logic from a domain class and can accept initialization parameters gradually, as a parser discovers them.<br />(Java Design Patterns)<br /><br />A common motivation for refactoring to a Builder is to simplify the client code that creates complex objects.<br />(Refactoring to Patterns)<br /><br />One place that I frequently will use the builder pattern in the future is creating objects for my unit tests in Java.  Test Data Builder works really well for this since it allows for having immutable objects without having to specify all the parameters in the constructor of the class.  It also allows for introducing test doubles easily for only specific cases, etc.<br /><br /><br />For Test Data Builders in Java see Jay Fields <a href="http://blog.jayfields.com/2009/01/most-java-unit-tests-consist-of-class.html">article</a>.<br /><br />For a Ruby test data builder, check out <a href="http://github.com/thoughtbot/factory_girl/tree/master">Factory Girl</a><br /><br /><br />Immutability simplifies concurrency issues, but complicates construction by forcing all state to be passed into the constructor.  When we were using Google Protocol Buffers, I noticed their diligence in making sure the only mutable objects were Builder objects.  This gives us the flexibility of building up the data in the builder class however it seems to work best, but then once the REAL object is built, it is immutable.<br /><br /><br />Whenever there is pain putting together a complex object graph, test objects, composite objects, and the like, the Builder pattern is very useful.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pattern of the Week - Flyweight]]></title>
+    <link href="http://watkyn.github.io/blog/2009/05/22/Pattern-of-the-Week-Flyweight/"/>
+    <updated>2009-05-22T16:17:12-05:00</updated>
+    <id>http://watkyn.github.io/blog/2009/05/22/Pattern-of-the-Week-Flyweight</id>
+    <content type="html"><![CDATA[<p>The intent of the FLYWEIGHT pattern is to use sharing to support large numbers of fine-grained objects efficiently.  (Java Design Patterns)<br /><br />I have always wondered what exactly the Flyweight pattern was all about so this week I decided I would learn.  Right away in the definition is the use of another term that I usually find confusing, &ldquo;fine-grained vs coarse-grained&rdquo; objects.<br /><br />It turns out <a href="http://en.wikipedia.org/wiki/Granularity">fine-grained and coarse-grained</a> are terms used in physics and have also come to be used in other technical fields.  For objects, to be fine-grained generally means to be small with a focused responsibility whereas coarse-grained objects generally encapsulate the functionality of many fine-grained objects.<br /><br />J2EE uses these terms a lot because of the problems involved in having fine-grained objects being too &ldquo;chatty&rdquo; in a distributed system.<br /><br />Anyway, to get back to Flyweight, lets say there is a fine-grained object like a Unit.  Unit is a measurement that can be anything from inches to liters to moles.  The point being, a Unit is immutable and one instance can be shared safely across the entire system.  An inch is always going to be an inch, so lets share the inch Unit instead of having everyone create there own instance of inch anytime they need it.<br /><br />One approach (used in the book) is to create a factory like UnitFactory that will return the shared instance of each Unit.  Enforcing the use of UnitFactory was done by hiding all the Unit implementations in an inner class of the Factory so that they can not be instantiated directly.  The Unit interface is exposed to all.  Asking the UnitFactory for a Unit could either be done by passing in a string or an enum representing the Unit to be returned.<br /><br />So, if you really want to prematurelly optimize your next project, analyze all the objects that could potentially be shared and tell everyone on your team that the Flyweight pattern would be a really good idea.</p>
 ]]></content>
   </entry>
   

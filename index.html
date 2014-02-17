@@ -9,8 +9,7 @@
   <meta name="author" content="Tony Eichelberger">
 
   
-  <meta name="description" content="Let&rsquo;s make some more analogies, since we can. Let&rsquo;s say you are an athlete, and are trying to make it into the NFL.
-Your agent says &hellip;">
+  <meta name="description" content="Why is it that a software developer can hardly walk past a&nbsp;puzzle&nbsp;without stopping to try to solve it? Not only that, but they will be &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,56 +65,6 @@ Your agent says &hellip;">
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/02/06/strength/">Strength, Agility, and Speed</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-06T20:49:51-06:00" pubdate data-updated="true">Feb 6<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Let&rsquo;s make some more analogies, since we can. Let&rsquo;s say you are an athlete, and are trying to make it into the NFL.
-Your agent says</p>
-
-<figure class='code'><figcaption><span>Discover if a number is prime</span><a href='http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/'>Source Article</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Fixnum</span>
-</span><span class='line'><span class="k">def</span> <span class="nf">prime?</span>
-</span><span class='line'><span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">*</span> <span class="nb">self</span><span class="p">)</span> <span class="o">!~</span> <span class="sr">/^1?$|^(11+?)\1+$/</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -462,6 +411,44 @@ Your agent says</p>
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/01/11/Legacy-Code-Extract-Interface/">Legacy Code - Extract Interface</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+<time datetime="2010-01-11T08:53:29-06:00" pubdate data-updated="true">Jan 11<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Micheal Feathers book &ldquo;Working with legacy code &rdquo; has a chapter called Extract Interface.  This is taken from Fowler&rsquo;s Refactoring book and applied to legacy code.<br /><br />The motivation for extracting an interface is different between the two books.  Refactoring looks at this from the point of code organization and structure.  Working With Legacy Code looks at this as a dependency breaking mechanism to get a class under test.<br /><br />Both aims are to make the code more maintainable over time, and the use of interfaces to represent concepts in code is a great way to do that.<br /><br />How would this play into something like ruby?  Well, the dependency issue is virtually non-existent from a testing point of view.  Getting a class under test is as easy as using a mocking library (Actually, the same can be said for Java in the example from Micheal&rsquo;s book).</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -477,10 +464,6 @@ Your agent says</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/02/06/strength/">Strength, Agility, and Speed</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2013/02/22/The-developer-mind-and-QA/">The Developer Mind and QA</a>
       </li>
     
@@ -494,6 +477,10 @@ Your agent says</p>
     
       <li class="post">
         <a href="/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion/">Vim Compiled With Ruby Support on Lion</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/22/Using-git-at-work-on-a-Windows-network-drive/">Using Git at Work on a Windows Network Drive</a>
       </li>
     
   </ul>
