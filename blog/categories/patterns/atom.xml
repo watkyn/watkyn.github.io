@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Patterns | . .]]></title>
-  <link href="http://www.watkyn.com/blog/categories/patterns/atom.xml" rel="self"/>
-  <link href="http://www.watkyn.com/"/>
-  <updated>2014-02-17T15:08:52-06:00</updated>
-  <id>http://www.watkyn.com/</id>
+  <link href="http://watkyn.github.io/blog/categories/patterns/atom.xml" rel="self"/>
+  <link href="http://watkyn.github.io/"/>
+  <updated>2014-02-17T15:10:15-06:00</updated>
+  <id>http://watkyn.github.io/</id>
   <author>
     <name><![CDATA[Tony Eichelberger]]></name>
     
@@ -15,45 +15,45 @@
   
   <entry>
     <title type="html"><![CDATA[Pattern of the Week - Visitor]]></title>
-    <link href="http://www.watkyn.com/blog/2010/01/06/Pattern-of-the-week-Visitor/"/>
+    <link href="http://watkyn.github.io/blog/2010/01/06/Pattern-of-the-week-Visitor/"/>
     <updated>2010-01-06T17:05:07-06:00</updated>
-    <id>http://www.watkyn.com/blog/2010/01/06/Pattern-of-the-week-Visitor</id>
+    <id>http://watkyn.github.io/blog/2010/01/06/Pattern-of-the-week-Visitor</id>
     <content type="html"><![CDATA[<p>The intent of VISITOR is to let you define a new operation for a hierarchy without changing the hierarchy classes. (Java Design Patterns)<br /><br />Josh Kerievsky puts it this way, &ldquo;The job of many real world Visitors is to accumulate information.&rdquo;<br /><br />So what exactly does that mean in practice?  The classes in the hierarchy must have a method called accept() that takes in an specified interface.  Then the interface will have visit() methods on there.  The visit signature will be determined by which class in the hierarchy you want to visit, and thus extend functionality to.<br /><br />The tricky part for me to understand was the &ldquo;double-dispatch&rdquo; that needs to take place for Visitor to function.  An object that conforms to the interface needed by the visitor takes the visitor in the accept() method.  Inside the accept() method the visit method is called by the object which then passes itself to the correct visit() method of the Visitor.<br /><br />Confusing?  Yes, it seems to be rather.<br /><br />I like the quote by Ralph Johnson about Visitor, &ldquo;Most of the time you don&rsquo;t need Visitor, but when you do need Visitor, you really need Visitor!&rdquo;<br /><br />That tells me, to not go out of my way to find uses for Visitor, but to stay far away from it until the light bulb comes on in a particular project where this makes perfect sense.  It may never happen, in which case I won&rsquo;t lose any sleep.<br /><br /><br />Visitor does not apply to ruby or any dynamic language where you can change the class hierarchy whenever you wish, on the fly.  Even so, I am going to show this code in ruby, pretending to be Java.  The interesting thing here is that ruby does not have method overloading since it is dynamically types.  So the actual java example would look different, in that the visit methods would be overloaded with the different types that we know of.  The ruby example has to check inside the visit method for the appropriate type and handle it accordingly.  Method overloading is a nice thing to have when you want it.<br /><br />My <a href="http://github.com/watkyn/scripts/blob/master/patterns/visitor.rb">TreeVisitor</a> example in ruby.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Pattern of the Week - Adapter]]></title>
-    <link href="http://www.watkyn.com/blog/2009/09/25/Pattern-of-the-week-Adapter/"/>
+    <link href="http://watkyn.github.io/blog/2009/09/25/Pattern-of-the-week-Adapter/"/>
     <updated>2009-09-25T16:33:09-05:00</updated>
-    <id>http://www.watkyn.com/blog/2009/09/25/Pattern-of-the-week-Adapter</id>
+    <id>http://watkyn.github.io/blog/2009/09/25/Pattern-of-the-week-Adapter</id>
     <content type="html"><![CDATA[<p>From Java Design Patterns:<br /><span class="docEmphStrong">The intent of</span> A<span class="docEmphSmaller">DAPTER</span> <span class="docEmphStrong"><a name="client expects"></a>is to provide the interface that a client expects while using the services of a class with a different interface.<br /><br />This actually makes sense to me right out of the gate.  I&rsquo;ve probably read about and used Adapter before but needed a refresher on what it actually was.<br /><br />So lets say that I have a lab processing class that takes LabOrder objects and processes them somehow.  Another team in my company has a service that supplies LabResults from a different vendor than the one I work with but they like the processing class I made and want me to process their LabResult class also.<br /><br />I see that the objects do similar things but have slightly different methods, so I create an adapter class that implements the LabOrder interface and delegates to the LabResult object that is passed in to the constructor.  No code changes required for the lab processing class.<br /><br />githup <a href="http://github.com/watkyn/scripts/blob/master/patterns/adapter.rb">Adapter</a> code<br /><br /><br /></span></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Pattern of the Week - Composite]]></title>
-    <link href="http://www.watkyn.com/blog/2009/06/08/Pattern-of-the-week-Composite/"/>
+    <link href="http://watkyn.github.io/blog/2009/06/08/Pattern-of-the-week-Composite/"/>
     <updated>2009-06-08T08:12:54-05:00</updated>
-    <id>http://www.watkyn.com/blog/2009/06/08/Pattern-of-the-week-Composite</id>
+    <id>http://watkyn.github.io/blog/2009/06/08/Pattern-of-the-week-Composite</id>
     <content type="html"><![CDATA[<p>The intent of the COMPOSITE pattern is to let clients treat individual objects and compositions of objects uniformly. (Java Design Patterns)<br /><br />There are objects that have children and there are objects that don&rsquo;t.  The objects that have children can have a common interface with the objects that do not have children, and so Composite.<br /><br />The example I used in my code (see below) was that of a Menu and MenuItems.  Swing uses this model for its menus.  A Menu may or may not have sub menus.  A MenuItem, however, never has sub menus; it is always the end of the road, a leaf.<br /><br />A process may want to traverse a tree of objects but it does not want to have to figure out who has child elements and who does.  Composite attempts to solve this problem by establishing a common interface between the two types.  Then the object that has children can traverse its children when the common method is called and call the common method on the child objects.<br /><br />Here is a <a href="http://github.com/watkyn/scripts/blob/4666ef973f91edc6d4fbf8ca5f8ecee3e269a734/patterns/composite.rb">link to the ruby code</a> I wrote up to help me understand Composite better.<br /><br /><br />I ran into another good example over the weekend.  We went to a tree identification outing and the naturalist there had a identification key.  It used decision tree logic, and I thought to myself, &ldquo;Hey, the Composite pattern in real life!&rdquo;.  What a geek I am sometimes.<br /><br />Each question led to either one or many follow up questions.  I thought of putting the logic into an iPhone application, and realized I could model the questions as Composites.  Some questions would be trees, and others would be leaves.  Perfect for a tree identification app!</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Pattern of the Week - Builder]]></title>
-    <link href="http://www.watkyn.com/blog/2009/05/22/Pattern-of-the-week-Builder/"/>
+    <link href="http://watkyn.github.io/blog/2009/05/22/Pattern-of-the-week-Builder/"/>
     <updated>2009-05-22T16:17:24-05:00</updated>
-    <id>http://www.watkyn.com/blog/2009/05/22/Pattern-of-the-week-Builder</id>
+    <id>http://watkyn.github.io/blog/2009/05/22/Pattern-of-the-week-Builder</id>
     <content type="html"><![CDATA[<p>The intent of the BUILDER pattern is to move the construction logic for an object outside the class to be instantiated.<br />A builder class offloads construction logic from a domain class and can accept initialization parameters gradually, as a parser discovers them.<br />(Java Design Patterns)<br /><br />A common motivation for refactoring to a Builder is to simplify the client code that creates complex objects.<br />(Refactoring to Patterns)<br /><br />One place that I frequently will use the builder pattern in the future is creating objects for my unit tests in Java.  Test Data Builder works really well for this since it allows for having immutable objects without having to specify all the parameters in the constructor of the class.  It also allows for introducing test doubles easily for only specific cases, etc.<br /><br /><br />For Test Data Builders in Java see Jay Fields <a href="http://blog.jayfields.com/2009/01/most-java-unit-tests-consist-of-class.html">article</a>.<br /><br />For a Ruby test data builder, check out <a href="http://github.com/thoughtbot/factory_girl/tree/master">Factory Girl</a><br /><br /><br />Immutability simplifies concurrency issues, but complicates construction by forcing all state to be passed into the constructor.  When we were using Google Protocol Buffers, I noticed their diligence in making sure the only mutable objects were Builder objects.  This gives us the flexibility of building up the data in the builder class however it seems to work best, but then once the REAL object is built, it is immutable.<br /><br /><br />Whenever there is pain putting together a complex object graph, test objects, composite objects, and the like, the Builder pattern is very useful.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Pattern of the Week - Flyweight]]></title>
-    <link href="http://www.watkyn.com/blog/2009/05/22/Pattern-of-the-Week-Flyweight/"/>
+    <link href="http://watkyn.github.io/blog/2009/05/22/Pattern-of-the-Week-Flyweight/"/>
     <updated>2009-05-22T16:17:12-05:00</updated>
-    <id>http://www.watkyn.com/blog/2009/05/22/Pattern-of-the-Week-Flyweight</id>
+    <id>http://watkyn.github.io/blog/2009/05/22/Pattern-of-the-Week-Flyweight</id>
     <content type="html"><![CDATA[<p>The intent of the FLYWEIGHT pattern is to use sharing to support large numbers of fine-grained objects efficiently.  (Java Design Patterns)<br /><br />I have always wondered what exactly the Flyweight pattern was all about so this week I decided I would learn.  Right away in the definition is the use of another term that I usually find confusing, &ldquo;fine-grained vs coarse-grained&rdquo; objects.<br /><br />It turns out <a href="http://en.wikipedia.org/wiki/Granularity">fine-grained and coarse-grained</a> are terms used in physics and have also come to be used in other technical fields.  For objects, to be fine-grained generally means to be small with a focused responsibility whereas coarse-grained objects generally encapsulate the functionality of many fine-grained objects.<br /><br />J2EE uses these terms a lot because of the problems involved in having fine-grained objects being too &ldquo;chatty&rdquo; in a distributed system.<br /><br />Anyway, to get back to Flyweight, lets say there is a fine-grained object like a Unit.  Unit is a measurement that can be anything from inches to liters to moles.  The point being, a Unit is immutable and one instance can be shared safely across the entire system.  An inch is always going to be an inch, so lets share the inch Unit instead of having everyone create there own instance of inch anytime they need it.<br /><br />One approach (used in the book) is to create a factory like UnitFactory that will return the shared instance of each Unit.  Enforcing the use of UnitFactory was done by hiding all the Unit implementations in an inner class of the Factory so that they can not be instantiated directly.  The Unit interface is exposed to all.  Asking the UnitFactory for a Unit could either be done by passing in a string or an enum representing the Unit to be returned.<br /><br />So, if you really want to prematurelly optimize your next project, analyze all the objects that could potentially be shared and tell everyone on your team that the Flyweight pattern would be a really good idea.</p>
 ]]></content>
   </entry>

@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://www.watkyn.com/sitemap.xml 
+Sitemap: http://watkyn.github.io/sitemap.xml 
