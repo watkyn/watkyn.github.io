@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: C++ | . .]]></title>
+  <link href="http://www.watkyn.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
+  <link href="http://www.watkyn.com/"/>
+  <updated>2014-02-17T14:59:39-06:00</updated>
+  <id>http://www.watkyn.com/</id>
+  <author>
+    <name><![CDATA[Tony Eichelberger]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Using Sqlite3 in a Visual Studio 2008 C++ Application]]></title>
+    <link href="http://www.watkyn.com/blog/2008/07/09/using-sqlite3-in-a-visual-studio-2008-c-plus-plus-application/"/>
+    <updated>2008-07-09T10:14:36-05:00</updated>
+    <id>http://www.watkyn.com/blog/2008/07/09/using-sqlite3-in-a-visual-studio-2008-c-plus-plus-application</id>
+    <content type="html"><![CDATA[<p>I had a terrible time finding out how to get sqlite working with VC++ using the windows binaries from the sqlite download page. Most of the trouble was from me being a complete newb to VC++ but in the end I got it working. Here are the steps to follow along for next time.</p>
+
+<ol>
+<li>Download the precompiled binaries for Windows and also download the source code.</li>
+<li>The DLL download should contain the following files: sqlite3.dll and sqlite3.def</li>
+<li>The source code should contain lots of c code and header files, you need to find the sqlite3.h header file.</li>
+<li>Put sqlite3.dll, sqlite3.def, and sqlite3.h files into a directory somewhere.</li>
+<li>Next you need to create a sqlite3.lib file in order to implicitly link the dll to your project</li>
+<li>From the command line, navigate to the folder that has the sqlite3 files from step 4, then type the following:</li>
+<li>LIB /DEF:sqlite3.def</li>
+<li>This should create two more files: sqlite3.lib and sqlite3.exp</li>
+<li>NOTE: LIB.exe needs to be on your path and can be found it in the Visual Studio install directory (do a search).</li>
+<li>Now start a new console application project in Visual Studio</li>
+<li>Copy the sqlite3.dll, sqlite3.lib, and sqlite3.h files into your new project directory</li>
+<li>Right click on the Resource Files folder and choose Add >> Existing Item &hellip; then choose sqlite3.lib</li>
+<li>You may get a dialog that asks you about the custom rule, I just chose no.</li>
+<li>Now add the sqlite3.h file into your project headers directory in Visual Studio (project >> Add >> Existing item)</li>
+<li>Now you should be able to start using sqlite3: Here is a sample console app you can try.</li>
+<li>This will create a new db and a sample table and spit out a resultset to the console.</li>
+</ol>
+
+
+<p>``` c++ Junk</p>
+
+<h1>include &ldquo;stdafx.h&rdquo;</h1>
+
+<h1>include &ldquo;sqlite3.h&rdquo;</h1>
+
+<p>static int callback(void *NotUsed, int argc, char <strong>argv, char </strong>azColName) {
+int i;
+for(i=0; i&lt;argc; i++){
+printf(&ldquo;%s = %s\n&rdquo;, azColName[i], argv[i] ? argv[i] : &ldquo;NULL&rdquo;);
+}
+printf(&ldquo;\n&rdquo;);
+return 0;
+}</p>
+
+<p>int <em>tmain(int argc, </em>TCHAR<em> argv[]) {
+sqlite3 </em>db;
+char *zErrMsg = 0;
+int rc;</p>
+
+<p>rc = sqlite3_open(&ldquo;test.db&rdquo;, &amp;db);
+if( rc ) {
+fprintf(stderr, &ldquo;Can&rsquo;t open database: %s\n&rdquo;, sqlite3_errmsg(db));
+sqlite3_close(db);
+return 1;
+}
+rc = sqlite3_exec(db, &ldquo;create table stuff ( name )&rdquo;, callback, 0, &amp;zErrMsg);
+rc = sqlite3_exec(db, &ldquo;insert into stuff values (&lsquo;hello&rsquo;)&rdquo;, callback, 0, &amp;zErrMsg);
+rc = sqlite3_exec(db, &ldquo;select * from stuff&rdquo;, callback, 0, &amp;zErrMsg);
+if(rc != SQLITE_OK) {
+fprintf(stderr, &ldquo;SQL error: %s\n&rdquo;, zErrMsg);
+sqlite3_free(zErrMsg);
+}
+sqlite3_close(db);
+return 0;
+}
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

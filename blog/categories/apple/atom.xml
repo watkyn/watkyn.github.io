@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Apple | . .]]></title>
+  <link href="http://www.watkyn.com/blog/categories/apple/atom.xml" rel="self"/>
+  <link href="http://www.watkyn.com/"/>
+  <updated>2014-02-17T14:59:39-06:00</updated>
+  <id>http://www.watkyn.com/</id>
+  <author>
+    <name><![CDATA[Tony Eichelberger]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[iPad Could Be for an Older Generation]]></title>
+    <link href="http://www.watkyn.com/blog/2010/04/12/iPad-could-be-for-an-older-generation/"/>
+    <updated>2010-04-12T16:55:14-05:00</updated>
+    <id>http://www.watkyn.com/blog/2010/04/12/iPad-could-be-for-an-older-generation</id>
+    <content type="html"><![CDATA[<p>Somehow, the complaints I am seeing about the iPad don&rsquo;t resonate with me.  <a href="http://www.crunchgear.com/2010/01/27/apple-has-a-solution-for-the-ipads-missing-sd-card-slot-and-usb-port-adapters/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+Techcrunch+%28TechCrunch%29&amp;utm_content=Google+Reader">No sd slot, no USB slot</a>, <a href="http://www.defectivebydesign.org/ipad">too restrictive, too much DRM</a>.  What I mean is this: I think the iPad will be a huge success, just not among the peope we think it will.<br /><br />There are a lot of people in the world who are not very tech savvy and who don&rsquo;t even know what a micro SD card is and wouldn&rsquo;t even know if they are buying DRM free music, video, etc. The baby boom generation, and the non-technical masses are going to love a device that &ldquo;just works&rdquo; for so many things.  At the same time, it makes these same people look and feel like the geeks they know and admire (ha ha).<br /><br />For example, I could see my Dad getting and iPad and a $15 monthly data plan so that he can do basic web browsing and email from home (he does not have internet right now).  It would be the simplest solution for him, and he doesn&rsquo;t have to use a mouse.  Some people just hate mice.<br /><br />Apple does such a great job of giving non-technical people fewer choices and a great experience.  The same may hold true for the iPad.  When the tech community criticizes Apple for the above mentioned things, they may be missing the point.  Apple doesn&rsquo;t care so much about developers, and alpha geeks as they might like to think.<br /><br />Watch out for the iPad revolution coming to a senior center near you!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Objective-C Scarcity Continues]]></title>
+    <link href="http://www.watkyn.com/blog/2010/04/12/Objective-C-scarcity-continues/"/>
+    <updated>2010-04-12T16:54:23-05:00</updated>
+    <id>http://www.watkyn.com/blog/2010/04/12/Objective-C-scarcity-continues</id>
+    <content type="html"><![CDATA[<p>There is a lot of angst among developers of the iPhone/iPad community over <a href="http://daringfireball.net/2010/04/iphone_agreement_bans_flash_compiler">the language restrictions of the new iOS 4.0 license</a>, and rightfully so.  Mobile Orchard closed shop because of it and there may be more high profile developers leaving the Apple platform in the future.<br /><br />There is one positive for the Objective-C developers, though.  The scarcity of their skill set will most likely continue.  Objective-C developers have experienced a renaissance in their once obscure language and frameworks, but now they are the chosen ones and they get paid like it.  Scarcity will give them the advantage in the market, driving up their rates/salaries as long as Apple continues to dominate in the arena of sales.<br /><br />This may be the only positive that comes from Apple&rsquo;s decision, and it is only a positive for a minority of developers, so in the end &hellip; blech.</p>
+]]></content>
+  </entry>
+  
+</feed>

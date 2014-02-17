@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Using Git at Work on a Windows Network Drive - . .</title>
+  <meta name="author" content="Tony Eichelberger">
+
+  
+  <meta name="description" content="Rarely do I program without using some sort of version control. I&rsquo;ve been using git locally on my Windows machine at work to manage some &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.watkyn.com/blog/2011/09/22/Using-git-at-work-on-a-Windows-network-drive">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title=". ." type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">. .</a></h1>
+  
+    <h2>(---)  Everybody likes Ike.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.watkyn.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Using Git at Work on a Windows Network Drive</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+<time datetime="2011-09-22T15:41:10-05:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Rarely do I program without using some sort of version control.  I&rsquo;ve been using git locally on my Windows machine at work to manage some scripts and I use a network drive as my remote in case my machine dies.  Here are the steps I used to get that up and running.<br /><br />You will need to install git (<a href="http://code.google.com/p/msysgit/">try msysgit windows installer</a>) and learn about git (<a href="http://gitimmersion.com/">try git immersion</a>) before setting up your remote repository.<br /><br /><br />Create a folder that will hold your git repository on your network share.<br />I have a mapped drive on g: and my repository is g:\scripts so that is what my examples will use.<br /><br />From a cmd prompt change to your mapped drive.<br /><span style="font-family: courier new; font-weight: bold;">&gt; cd g:</span><br /><br />Then cd into your soon to be git repository.<br /><span style="font-family: courier new; font-weight: bold;">&gt; cd scripts</span><br /><br />Then create an empty git repository.  If you do not use the &mdash;bare option, you will have issues so don&rsquo;t leave that out.<br /><span style="font-weight: bold; font-family: courier new;">&gt; git init &mdash;bare</span><br /><br />Now if you don&rsquo;t have a local git repository yet, then you can clone your new repository wherever you like by navigating back to your local drive.<br /><span style="font-family: courier new; font-weight: bold;">&gt; c:</span><span style="font-family: courier new; font-weight: bold;"><br />&gt; cd work/scripts</span><br /><span style="font-family: courier new; font-weight: bold;">&gt; git clone file://g:\scripts</span> <br />(UNC paths also work  file://\server\share\username\scripts)<br /><br />When you clone, you automatically get a remote called &ldquo;origin&rdquo; and you can push to the server for safe keeping any time you make changes locally.<br /><span style="font-family: courier new; font-weight: bold;">&gt; git push origin master</span><br /><br />If you already have a git repository and you just want to push out to the shared drive then you can do this from within your local git manged project.<br /><span style="font-weight: bold; font-family: courier new;">&gt; git remote add origin file://g:\scripts</span><br /><span style="font-family: courier new; font-weight: bold;">&gt; git push origin master</span></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Tony Eichelberger</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+<time datetime="2011-09-22T15:41:10-05:00" class="updated">Updated Sep 22<span>nd</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/git/'>git</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/03/11/Mind-Share-Part-Two/" title="Previous Post: Mind Share (Part Two)">&laquo; Mind Share (Part Two)</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion/" title="Next Post: vim compiled with ruby support on Lion">vim compiled with ruby support on Lion &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/22/The-developer-mind-and-QA/">The Developer Mind and QA</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/14/SVN-Eclipse-Mountain-Lion-and-Homebrew/">SVN Eclipse Mountain Lion and Homebrew</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/06/Updating-rubygems-on-an-old-10.5-Leopard-machine/">Updating Rubygems on an Old 10.5 Leopard Machine</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion/">Vim Compiled With Ruby Support on Lion</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/22/Using-git-at-work-on-a-Windows-network-drive/">Using Git at Work on a Windows Network Drive</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Tony Eichelberger -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

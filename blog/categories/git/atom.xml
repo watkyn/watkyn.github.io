@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Git | . .]]></title>
+  <link href="http://www.watkyn.com/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://www.watkyn.com/"/>
+  <updated>2014-02-17T14:59:39-06:00</updated>
+  <id>http://www.watkyn.com/</id>
+  <author>
+    <name><![CDATA[Tony Eichelberger]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Using Git at Work on a Windows Network Drive]]></title>
+    <link href="http://www.watkyn.com/blog/2011/09/22/Using-git-at-work-on-a-Windows-network-drive/"/>
+    <updated>2011-09-22T15:41:10-05:00</updated>
+    <id>http://www.watkyn.com/blog/2011/09/22/Using-git-at-work-on-a-Windows-network-drive</id>
+    <content type="html"><![CDATA[<p>Rarely do I program without using some sort of version control.  I&rsquo;ve been using git locally on my Windows machine at work to manage some scripts and I use a network drive as my remote in case my machine dies.  Here are the steps I used to get that up and running.<br /><br />You will need to install git (<a href="http://code.google.com/p/msysgit/">try msysgit windows installer</a>) and learn about git (<a href="http://gitimmersion.com/">try git immersion</a>) before setting up your remote repository.<br /><br /><br />Create a folder that will hold your git repository on your network share.<br />I have a mapped drive on g: and my repository is g:\scripts so that is what my examples will use.<br /><br />From a cmd prompt change to your mapped drive.<br /><span style="font-family: courier new; font-weight: bold;">&gt; cd g:</span><br /><br />Then cd into your soon to be git repository.<br /><span style="font-family: courier new; font-weight: bold;">&gt; cd scripts</span><br /><br />Then create an empty git repository.  If you do not use the &mdash;bare option, you will have issues so don&rsquo;t leave that out.<br /><span style="font-weight: bold; font-family: courier new;">&gt; git init &mdash;bare</span><br /><br />Now if you don&rsquo;t have a local git repository yet, then you can clone your new repository wherever you like by navigating back to your local drive.<br /><span style="font-family: courier new; font-weight: bold;">&gt; c:</span><span style="font-family: courier new; font-weight: bold;"><br />&gt; cd work/scripts</span><br /><span style="font-family: courier new; font-weight: bold;">&gt; git clone file://g:\scripts</span> <br />(UNC paths also work  file://\server\share\username\scripts)<br /><br />When you clone, you automatically get a remote called &ldquo;origin&rdquo; and you can push to the server for safe keeping any time you make changes locally.<br /><span style="font-family: courier new; font-weight: bold;">&gt; git push origin master</span><br /><br />If you already have a git repository and you just want to push out to the shared drive then you can do this from within your local git manged project.<br /><span style="font-weight: bold; font-family: courier new;">&gt; git remote add origin file://g:\scripts</span><br /><span style="font-family: courier new; font-weight: bold;">&gt; git push origin master</span></p>
+]]></content>
+  </entry>
+  
+</feed>

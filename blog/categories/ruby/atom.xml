@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | . .]]></title>
+  <link href="http://www.watkyn.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://www.watkyn.com/"/>
+  <updated>2014-02-17T14:59:39-06:00</updated>
+  <id>http://www.watkyn.com/</id>
+  <author>
+    <name><![CDATA[Tony Eichelberger]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Updating Rubygems on an Old 10.5 Leopard Machine]]></title>
+    <link href="http://www.watkyn.com/blog/2012/01/06/Updating-rubygems-on-an-old-10.5-Leopard-machine/"/>
+    <updated>2012-01-06T15:04:18-06:00</updated>
+    <id>http://www.watkyn.com/blog/2012/01/06/Updating-rubygems-on-an-old-10.5-Leopard-machine</id>
+    <content type="html"><![CDATA[<p>I ran into this problem today when trying to update my ruby gems on a fresh OSX 10.5 machine for testing:<br /><br />Updating RubyGems&hellip;<br />ERROR:  While executing gem &hellip; (Gem::RemoteSourceException)<br />    HTTP Response 302 fetching <a href="http://gems.rubyforge.org/yaml">http://gems.rubyforge.org/yaml</a><br /><br /><br />After a little googling I saw where gems were stored on S3 so I just added the &mdash;source option and that worked.  Here is the command for posterity.<br /><br />gem update &mdash;system &mdash;source <a href="http://production.s3.rubygems.org/">http://production.s3.rubygems.org/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vim Compiled With Ruby Support on Lion]]></title>
+    <link href="http://www.watkyn.com/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion/"/>
+    <updated>2012-01-06T15:03:30-06:00</updated>
+    <id>http://www.watkyn.com/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion</id>
+    <content type="html"><![CDATA[<p>If you are a vim user on a Mac and you also like the <a href="https://github.com/wincent/Command-T">Command-t</a> plugin you have no doubt had to deal with the default vim, which does not come with ruby support out of the box. I have resorted to using <a href="http://code.google.com/p/macvim/">MacVim</a> for most of my needs but once in a while I wish Command-t was there for me in a vim terminal (read tmux).<br /> <br />Well, I just found out that MacVim ships with a Vim and MacVim executable, so just use that.<br /> <br />I added this alias to my bash profile and all was good:<br /><br /><span style="font-weight:bold;">alias vim=&#39;/Applications/MacVim.app/Contents/MacOS/Vim&#39;</span><br /><br />That will take precedence over /usr/bin/vim (except if you do sudo vim, then you are back to the old /usr/bin/vim).<br /> <br />Good enough, is what I say.<br /> <br /><br />PS. I made a symlink from /Applications/MacVim.app/Contents/MacOS/Vim into /usr/bin/vim and it didn&#39;t work quite right. I got a bunch of warnings about color scheme, etc. Not sure why, but I didn&rsquo;t feel the need to dig deeper. That is why I went the alias route.</p>
+]]></content>
+  </entry>
+  
+</feed>

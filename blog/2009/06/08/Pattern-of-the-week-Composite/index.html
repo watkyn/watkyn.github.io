@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Pattern of the Week - Composite - . .</title>
+  <meta name="author" content="Tony Eichelberger">
+
+  
+  <meta name="description" content="The intent of the COMPOSITE pattern is to let clients treat individual objects and compositions of objects uniformly. (Java Design Patterns)There are &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.watkyn.com/blog/2009/06/08/Pattern-of-the-week-Composite">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title=". ." type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">. .</a></h1>
+  
+    <h2>(---)  Everybody likes Ike.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.watkyn.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Pattern of the Week - Composite</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+<time datetime="2009-06-08T08:12:54-05:00" pubdate data-updated="true">Jun 8<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>The intent of the COMPOSITE pattern is to let clients treat individual objects and compositions of objects uniformly. (Java Design Patterns)<br /><br />There are objects that have children and there are objects that don&rsquo;t.  The objects that have children can have a common interface with the objects that do not have children, and so Composite.<br /><br />The example I used in my code (see below) was that of a Menu and MenuItems.  Swing uses this model for its menus.  A Menu may or may not have sub menus.  A MenuItem, however, never has sub menus; it is always the end of the road, a leaf.<br /><br />A process may want to traverse a tree of objects but it does not want to have to figure out who has child elements and who does.  Composite attempts to solve this problem by establishing a common interface between the two types.  Then the object that has children can traverse its children when the common method is called and call the common method on the child objects.<br /><br />Here is a <a href="http://github.com/watkyn/scripts/blob/4666ef973f91edc6d4fbf8ca5f8ecee3e269a734/patterns/composite.rb">link to the ruby code</a> I wrote up to help me understand Composite better.<br /><br /><br />I ran into another good example over the weekend.  We went to a tree identification outing and the naturalist there had a identification key.  It used decision tree logic, and I thought to myself, &ldquo;Hey, the Composite pattern in real life!&rdquo;.  What a geek I am sometimes.<br /><br />Each question led to either one or many follow up questions.  I thought of putting the logic into an iPhone application, and realized I could model the questions as Composites.  Some questions would be trees, and others would be leaves.  Perfect for a tree identification app!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Tony Eichelberger</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+<time datetime="2009-06-08T08:12:54-05:00" class="updated">Updated Jun 8<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/patterns/'>patterns</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/05/22/Pattern-of-the-week-Builder/" title="Previous Post: Pattern of the week - Builder">&laquo; Pattern of the week - Builder</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/08/17/Over-releasing-objects-in-Objective-C/" title="Next Post: Over releasing objects in Objective-C">Over releasing objects in Objective-C &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/22/The-developer-mind-and-QA/">The Developer Mind and QA</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/14/SVN-Eclipse-Mountain-Lion-and-Homebrew/">SVN Eclipse Mountain Lion and Homebrew</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/06/Updating-rubygems-on-an-old-10.5-Leopard-machine/">Updating Rubygems on an Old 10.5 Leopard Machine</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion/">Vim Compiled With Ruby Support on Lion</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/22/Using-git-at-work-on-a-Windows-network-drive/">Using Git at Work on a Windows Network Drive</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Tony Eichelberger -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
