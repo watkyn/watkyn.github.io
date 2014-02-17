@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Over Releasing Objects in Objective-C - ...</title>
+  <meta name="author" content="Tony Eichelberger">
+
+  
+  <meta name="description" content="I just learned the difference between over releasing an object and attempting to release an unallocated object.
+I saw this example in an iPhone book &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://watkyn.github.io/blog/2009/08/17/Over-releasing-objects-in-Objective-C">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="..." type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">...</a></h1>
+  
+    <h2>(That is an ellipsis)</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:watkyn.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Over Releasing Objects in Objective-C</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+<time datetime="2009-08-17T08:11:41-05:00" pubdate data-updated="true">Aug 17<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I just learned the difference between over releasing an object and attempting to release an unallocated object.
+I saw this example in an iPhone book where an instance variable was being released before it was assigned.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="err">–</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">parserDidStartDocument:</span><span class="p">(</span><span class="n">NSXMLParser</span> <span class="o">*</span><span class="p">)</span><span class="n">parser</span> <span class="p">{</span>
+</span><span class='line'>  <span class="p">[</span><span class="n">tweetsString</span> <span class="n">release</span><span class="p">];</span>
+</span><span class='line'>  <span class="n">tweetsString</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSMutableString</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithCapacity:</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="p">(</span><span class="mi">140</span> <span class="o">+</span> <span class="mi">20</span><span class="p">))</span> <span class="p">];</span>
+</span><span class='line'>  <span class="c1">// more code</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I was wondering why the release on the first line was not blowing up, since I have experienced errors in my code when I over release an object (that is, I call release on an object more than once).<br/>
+So I tried an experiment and put multiple [<span class="blsp-spelling-error" id="SPELLING_ERROR_8">tweetString</span> release]; calls all in a row, thinking this would blow up.
+ But it works just fine.</p>
+
+<p>The reason is that a nil object (one that has never been allocated) is never sent any messages.  There are no NullPointerExceptions since the messages are just discarded. Objective-C is a no-op language on nil, and you can rely on that in your code this way. So it is safe to call release on an unallocated object, but you cannot send release to an object more than once AFTER it has been allocated.<br /><br />I should have realized this before, since this is the way properties work when set to retain.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Tony Eichelberger</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+<time datetime="2009-08-17T08:11:41-05:00" class="updated">Updated Aug 17<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/iphone/'>iphone</a>, <a class='category' href='/blog/categories/objective-c/'>objective-c</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/06/08/Pattern-of-the-week-Composite/" title="Previous Post: Pattern of the week - Composite">&laquo; Pattern of the week - Composite</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/09/14/OCUnit-Configuration-for-iPhone-Development/" title="Next Post: OCUnit Configuration for iPhone Development">OCUnit Configuration for iPhone Development &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/06/strength/">Strength, Agility, and Speed</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/22/The-developer-mind-and-QA/">The Developer Mind and QA</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/14/SVN-Eclipse-Mountain-Lion-and-Homebrew/">SVN Eclipse Mountain Lion and Homebrew</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/06/Updating-rubygems-on-an-old-10.5-Leopard-machine/">Updating Rubygems on an Old 10.5 Leopard Machine</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion/">Vim Compiled With Ruby Support on Lion</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Tony Eichelberger -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

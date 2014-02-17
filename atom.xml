@@ -1,16 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[...]]></title>
   <link href="http://watkyn.github.io/atom.xml" rel="self"/>
   <link href="http://watkyn.github.io/"/>
-  <updated>2014-02-06T20:40:04-06:00</updated>
+  <updated>2014-02-17T11:10:35-06:00</updated>
   <id>http://watkyn.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Tony Eichelberger]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Strength, Agility, and Speed]]></title>
+    <link href="http://watkyn.github.io/blog/2014/02/06/strength/"/>
+    <updated>2014-02-06T20:49:51-06:00</updated>
+    <id>http://watkyn.github.io/blog/2014/02/06/strength</id>
+    <content type="html"><![CDATA[<p>Let&rsquo;s make some more analogies, since we can. Let&rsquo;s say you are an athlete, and are trying to make it into the NFL.
+Your agent says</p>
+
+<figure class='code'><figcaption><span>Discover if a number is prime</span><a href='http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/'>Source Article</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Fixnum</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">prime?</span>
+</span><span class='line'><span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">*</span> <span class="nb">self</span><span class="p">)</span> <span class="o">!~</span> <span class="sr">/^1?$|^(11+?)\1+$/</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Developer Mind and QA]]></title>
+    <link href="http://watkyn.github.io/blog/2013/02/22/The-developer-mind-and-QA/"/>
+    <updated>2013-02-22T21:54:16-06:00</updated>
+    <id>http://watkyn.github.io/blog/2013/02/22/The-developer-mind-and-QA</id>
+    <content type="html"><![CDATA[<p>Why is it that a software developer can hardly walk past a&nbsp;<a href="http://www.elversonpuzzle.com/wine_bottle_puzzle.html">puzzle</a>&nbsp;without stopping to try to solve it? Not only that, but they will be slightly angry if you interfere and offer them a suggestion as to the solution.<br /><br />Compare this type of problem solving genius to what happens when a new bug report comes in for the software they work on. Inform that same developer that there is a defect somewhere in the ordering system, and they will require detailed step by step instructions on how to reproduce it. And after one minute of trying to reproduce it, they will quickly say that it &ldquo;works on my machine&rdquo; and call it good.<br /><br />People hate to waste time on unsolvable problems. Developers don&rsquo;t always trust people to give them a problem that is solvable. Think of how soul crushing it would be to give that developer a tavern puzzle that did not have a solution. It would be such a cruel trick (please don&rsquo;t do this, no matter how sorely you are tempted).<br /><br />On the other hand, when a developer knows the problem has a solution, they will accept the challenge and put all their focus and brain power into the problem until they get it. It&rsquo;s like a switch that is flipped once we know we&rsquo;re not on a wild goose chase.<br /><br />Hmmm, not sure if there is a solution to anything in here&hellip;<br /><br /><br /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SVN Eclipse Mountain Lion and Homebrew]]></title>
+    <link href="http://watkyn.github.io/blog/2013/02/14/SVN-Eclipse-Mountain-Lion-and-Homebrew/"/>
+    <updated>2013-02-14T08:28:37-06:00</updated>
+    <id>http://watkyn.github.io/blog/2013/02/14/SVN-Eclipse-Mountain-Lion-and-Homebrew</id>
+    <content type="html"><![CDATA[<p>I was frustrated trying to figure out how to get subversion installed on my OSX machine so that it would be compatible with Eclipse. I wanted to go with the JavaHL svn adapter but I had already installed svn using homebrew.<br />I tried to reinstall svn with homebrew like this but got an error:</p>
+
+<br /><pre>$ brew install --universal --java subversion<br />   Error: subversion dependency neon not installed with:<br />     --universal<br /><br /></pre>There are several dependencies that need to be uninstalled before installing subversion again with &#8211;univeral and &#8211;java options <br />For me it was this:<br /><br /><pre><br />$ brew rm neon<br />$ brew rm sqlite<br />$ brew rm serf<br /></pre><br />Then this worked:<br /><pre>$ brew install --universal --java subversion</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Updating Rubygems on an Old 10.5 Leopard Machine]]></title>
+    <link href="http://watkyn.github.io/blog/2012/01/06/Updating-rubygems-on-an-old-10.5-Leopard-machine/"/>
+    <updated>2012-01-06T15:04:18-06:00</updated>
+    <id>http://watkyn.github.io/blog/2012/01/06/Updating-rubygems-on-an-old-10.5-Leopard-machine</id>
+    <content type="html"><![CDATA[<p>I ran into this problem today when trying to update my ruby gems on a fresh OSX 10.5 machine for testing:<br /><br />Updating RubyGems&hellip;<br />ERROR:  While executing gem &hellip; (Gem::RemoteSourceException)<br />    HTTP Response 302 fetching <a href="http://gems.rubyforge.org/yaml">http://gems.rubyforge.org/yaml</a><br /><br /><br />After a little googling I saw where gems were stored on S3 so I just added the &mdash;source option and that worked.  Here is the command for posterity.<br /><br />gem update &mdash;system &mdash;source <a href="http://production.s3.rubygems.org/">http://production.s3.rubygems.org/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vim Compiled With Ruby Support on Lion]]></title>
+    <link href="http://watkyn.github.io/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion/"/>
+    <updated>2012-01-06T15:03:30-06:00</updated>
+    <id>http://watkyn.github.io/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion</id>
+    <content type="html"><![CDATA[<p>If you are a vim user on a Mac and you also like the <a href="https://github.com/wincent/Command-T">Command-t</a> plugin you have no doubt had to deal with the default vim, which does not come with ruby support out of the box. I have resorted to using <a href="http://code.google.com/p/macvim/">MacVim</a> for most of my needs but once in a while I wish Command-t was there for me in a vim terminal (read tmux).<br /> <br />Well, I just found out that MacVim ships with a Vim and MacVim executable, so just use that.<br /> <br />I added this alias to my bash profile and all was good:<br /><br /><span style="font-weight:bold;">alias vim=&#39;/Applications/MacVim.app/Contents/MacOS/Vim&#39;</span><br /><br />That will take precedence over /usr/bin/vim (except if you do sudo vim, then you are back to the old /usr/bin/vim).<br /> <br />Good enough, is what I say.<br /> <br /><br />PS. I made a symlink from /Applications/MacVim.app/Contents/MacOS/Vim into /usr/bin/vim and it didn&#39;t work quite right. I got a bunch of warnings about color scheme, etc. Not sure why, but I didn&rsquo;t feel the need to dig deeper. That is why I went the alias route.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Git at Work on a Windows Network Drive]]></title>
+    <link href="http://watkyn.github.io/blog/2011/09/22/Using-git-at-work-on-a-Windows-network-drive/"/>
+    <updated>2011-09-22T15:41:10-05:00</updated>
+    <id>http://watkyn.github.io/blog/2011/09/22/Using-git-at-work-on-a-Windows-network-drive</id>
+    <content type="html"><![CDATA[<p>Rarely do I program without using some sort of version control.  I&rsquo;ve been using git locally on my Windows machine at work to manage some scripts and I use a network drive as my remote in case my machine dies.  Here are the steps I used to get that up and running.<br /><br />You will need to install git (<a href="http://code.google.com/p/msysgit/">try msysgit windows installer</a>) and learn about git (<a href="http://gitimmersion.com/">try git immersion</a>) before setting up your remote repository.<br /><br /><br />Create a folder that will hold your git repository on your network share.<br />I have a mapped drive on g: and my repository is g:\scripts so that is what my examples will use.<br /><br />From a cmd prompt change to your mapped drive.<br /><span style="font-family: courier new; font-weight: bold;">&gt; cd g:</span><br /><br />Then cd into your soon to be git repository.<br /><span style="font-family: courier new; font-weight: bold;">&gt; cd scripts</span><br /><br />Then create an empty git repository.  If you do not use the &mdash;bare option, you will have issues so don&rsquo;t leave that out.<br /><span style="font-weight: bold; font-family: courier new;">&gt; git init &mdash;bare</span><br /><br />Now if you don&rsquo;t have a local git repository yet, then you can clone your new repository wherever you like by navigating back to your local drive.<br /><span style="font-family: courier new; font-weight: bold;">&gt; c:</span><span style="font-family: courier new; font-weight: bold;"><br />&gt; cd work/scripts</span><br /><span style="font-family: courier new; font-weight: bold;">&gt; git clone file://g:\scripts</span> <br />(UNC paths also work  file://\server\share\username\scripts)<br /><br />When you clone, you automatically get a remote called &ldquo;origin&rdquo; and you can push to the server for safe keeping any time you make changes locally.<br /><span style="font-family: courier new; font-weight: bold;">&gt; git push origin master</span><br /><br />If you already have a git repository and you just want to push out to the shared drive then you can do this from within your local git manged project.<br /><span style="font-weight: bold; font-family: courier new;">&gt; git remote add origin file://g:\scripts</span><br /><span style="font-family: courier new; font-weight: bold;">&gt; git push origin master</span></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mind Share (Part Two)]]></title>
+    <link href="http://watkyn.github.io/blog/2011/03/11/Mind-Share-Part-Two/"/>
+    <updated>2011-03-11T14:38:17-06:00</updated>
+    <id>http://watkyn.github.io/blog/2011/03/11/Mind-Share-Part-Two</id>
+    <content type="html"><![CDATA[<p>Exactly one year ago today <a href="http://watkyn.github.io/blog/2010/04/08/Mind-Share-Part-One/">I posted about &ldquo;mind share&rdquo;</a> and how I was going to &ldquo;punch out&rdquo; of the tech world and enter fully into my home life with my full attention.  Well, it has gone pretty well.  There is definitely a correlation between programming too much and mind share issues.  The biggest lesson I&rsquo;ve learned is to recognize when I&rsquo;ve been pushing too hard, and deliberately let go of the things I don&rsquo;t have time for.<br /><br />Here are a few thoughts about what has worked for me and what has not in my ever elusive quest for work life balance.<br /><br /><span style="font-weight: bold;">Things that worked:</span><br /><ul><li>Early mornings:<br />I have been reading and working on projects by getting up really early in the morning.  Working early in the morning has several benefits for me.  1) It is a natural time box that I can&rsquo;t easily lengthen since I need to get ready for work eventually.  2) My mind is fresh and doesn&rsquo;t feel tired like it can later in the evening.  3) I&rsquo;m not taking away from time with anybody else (they are all still sleeping).<br /></li></ul><ul><li>Family projects:<br />My wife and I worked on a project together.  It is a website that helps her keep track of things she buys in bulk to better understand which of those things are making her money and which are not worth the investment. This was fun because it was something we could work on in the evening but it wasn&rsquo;t taking time away from us being together.  It also was different than when I worked on a project by myself because now we were both thinking about the same thing, so if I had an idea for Homestore Lane (<a href="http://homestorelane.com/"><a href="http://homestorelane.com">http://homestorelane.com</a></a>) it was something we could talk about, unlike if it was some project she was not interested in.<br /></li></ul><br /><span style="font-weight: bold;">Things that didn&rsquo;t work so well:</span><br /><ul><li> One night per week to work on projects:<br />There are several reasons I don&rsquo;t think this worked very well for me.  1)  I was already mentally tired by the time I started on my projects.  2) It was hard to unwind and go to sleep after programming late into the night.  3) It was hard to get back into things after waiting for the whole week (or sometimes longer since it was easy to skip a week).</li></ul><ul><li>Trying harder to compartmentalize:<br />It wasn&rsquo;t mind over matter for me.  I had to stop trying to do so much before I noticed the difference in my attention span and my engagement in my home life.  Even though I would tell myself to stop thinking about projects, my brain just could not unwind enough because it was too tired (or engaged, or ?).<br /></li></ul><br />I&rsquo;m going to stick with the morning thing and maybe some more family projects and see how it goes.  If there is anything else along these lines I am sure I will blog about them next year.  Or the year after, maybe.  (I am already staying up too late to write this, so what am I doing?  Time to stop.)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iPad Could Be for an Older Generation]]></title>
+    <link href="http://watkyn.github.io/blog/2010/04/12/iPad-could-be-for-an-older-generation/"/>
+    <updated>2010-04-12T16:55:14-05:00</updated>
+    <id>http://watkyn.github.io/blog/2010/04/12/iPad-could-be-for-an-older-generation</id>
+    <content type="html"><![CDATA[<p>Somehow, the complaints I am seeing about the iPad don&rsquo;t resonate with me.  <a href="http://www.crunchgear.com/2010/01/27/apple-has-a-solution-for-the-ipads-missing-sd-card-slot-and-usb-port-adapters/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+Techcrunch+%28TechCrunch%29&amp;utm_content=Google+Reader">No sd slot, no USB slot</a>, <a href="http://www.defectivebydesign.org/ipad">too restrictive, too much DRM</a>.  What I mean is this: I think the iPad will be a huge success, just not among the peope we think it will.<br /><br />There are a lot of people in the world who are not very tech savvy and who don&rsquo;t even know what a micro SD card is and wouldn&rsquo;t even know if they are buying DRM free music, video, etc. The baby boom generation, and the non-technical masses are going to love a device that &ldquo;just works&rdquo; for so many things.  At the same time, it makes these same people look and feel like the geeks they know and admire (ha ha).<br /><br />For example, I could see my Dad getting and iPad and a $15 monthly data plan so that he can do basic web browsing and email from home (he does not have internet right now).  It would be the simplest solution for him, and he doesn&rsquo;t have to use a mouse.  Some people just hate mice.<br /><br />Apple does such a great job of giving non-technical people fewer choices and a great experience.  The same may hold true for the iPad.  When the tech community criticizes Apple for the above mentioned things, they may be missing the point.  Apple doesn&rsquo;t care so much about developers, and alpha geeks as they might like to think.<br /><br />Watch out for the iPad revolution coming to a senior center near you!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Objective-C Scarcity Continues]]></title>
+    <link href="http://watkyn.github.io/blog/2010/04/12/Objective-C-scarcity-continues/"/>
+    <updated>2010-04-12T16:54:23-05:00</updated>
+    <id>http://watkyn.github.io/blog/2010/04/12/Objective-C-scarcity-continues</id>
+    <content type="html"><![CDATA[<p>There is a lot of angst among developers of the iPhone/iPad community over <a href="http://daringfireball.net/2010/04/iphone_agreement_bans_flash_compiler">the language restrictions of the new iOS 4.0 license</a>, and rightfully so.  Mobile Orchard closed shop because of it and there may be more high profile developers leaving the Apple platform in the future.<br /><br />There is one positive for the Objective-C developers, though.  The scarcity of their skill set will most likely continue.  Objective-C developers have experienced a renaissance in their once obscure language and frameworks, but now they are the chosen ones and they get paid like it.  Scarcity will give them the advantage in the market, driving up their rates/salaries as long as Apple continues to dominate in the arena of sales.<br /><br />This may be the only positive that comes from Apple&rsquo;s decision, and it is only a positive for a minority of developers, so in the end &hellip; blech.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mind Share]]></title>
+    <link href="http://watkyn.github.io/blog/2010/04/08/Mind-Share-Part-One/"/>
+    <updated>2010-04-08T20:26:47-05:00</updated>
+    <id>http://watkyn.github.io/blog/2010/04/08/Mind-Share-Part-One</id>
+    <content type="html"><![CDATA[<p>After reading <a href="http://praglife.typepad.com/pragmatic_life/2009/05/punch-out-log-off-.html">the pragmatic life post called Punch Out  Log Off</a>,   I began thinking about a term I call &ldquo;mind share&rdquo;.  Think of mind share in terms of twitter, but instead of asking &ldquo;what are you doing right now&rdquo;, you ask, &ldquo;what are you thinking about right now?&rdquo; If you ask yourself this question periodically, you will begin to see some patterns.<br /><br />For example, let&rsquo;s say you are spending some quality time with the family.  What are you thinking about?  Do any of the answers to the mind share question sound like the list below?  If so, the people around you are not getting quality time from you and believe me, they can tell:<br /><br />&ndash; &ldquo;What is the killer feature for idea X that I should build?&rdquo;<br />&ndash; &ldquo;I wish my company used REST web services instead of SOAP?&rdquo;<br />&ndash; &ldquo;I should tweet that I am hanging out with the fam right now.&rdquo;<br />&ndash; &ldquo;Someone is talking to me, and I am looking at them, but I have no idea what they just said.&rdquo;<br />&ndash; &ldquo;What a cool idea for an iPhone App. I better write it down.&rdquo;<br />&ndash; &ldquo;I think I just heard my iPhone buzz.  Was it email, SMS, ebay, Fring, or one of the 700 other possibilities?&rdquo;<br /><br />It takes a conscious effort to make sure the people in the room with you are given more priority than the virtual world we work and play in throughout the day.  I have been analyzing this in my own life for the past couple years (mostly the negative effects) and have started to understand some of the ways that I can give more mind share to the people I love and compartmentalize my work better.<br /><br />In part two of this post, I might try to explain some of the things I have been learning that help keep my mind from getting too absorbed in tech. Actually, I may never write part two, if I am successful at punching out and checking in to life at home better.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Legacy Code - Extract Interface]]></title>
+    <link href="http://watkyn.github.io/blog/2010/01/11/Legacy-Code-Extract-Interface/"/>
+    <updated>2010-01-11T08:53:29-06:00</updated>
+    <id>http://watkyn.github.io/blog/2010/01/11/Legacy-Code-Extract-Interface</id>
+    <content type="html"><![CDATA[<p>Micheal Feathers book &ldquo;Working with legacy code &rdquo; has a chapter called Extract Interface.  This is taken from Fowler&rsquo;s Refactoring book and applied to legacy code.<br /><br />The motivation for extracting an interface is different between the two books.  Refactoring looks at this from the point of code organization and structure.  Working With Legacy Code looks at this as a dependency breaking mechanism to get a class under test.<br /><br />Both aims are to make the code more maintainable over time, and the use of interfaces to represent concepts in code is a great way to do that.<br /><br />How would this play into something like ruby?  Well, the dependency issue is virtually non-existent from a testing point of view.  Getting a class under test is as easy as using a mocking library (Actually, the same can be said for Java in the example from Micheal&rsquo;s book).</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pattern of the Week - Visitor]]></title>
+    <link href="http://watkyn.github.io/blog/2010/01/06/Pattern-of-the-week-Visitor/"/>
+    <updated>2010-01-06T17:05:07-06:00</updated>
+    <id>http://watkyn.github.io/blog/2010/01/06/Pattern-of-the-week-Visitor</id>
+    <content type="html"><![CDATA[<p>The intent of VISITOR is to let you define a new operation for a hierarchy without changing the hierarchy classes. (Java Design Patterns)<br /><br />Josh Kerievsky puts it this way, &ldquo;The job of many real world Visitors is to accumulate information.&rdquo;<br /><br />So what exactly does that mean in practice?  The classes in the hierarchy must have a method called accept() that takes in an specified interface.  Then the interface will have visit() methods on there.  The visit signature will be determined by which class in the hierarchy you want to visit, and thus extend functionality to.<br /><br />The tricky part for me to understand was the &ldquo;double-dispatch&rdquo; that needs to take place for Visitor to function.  An object that conforms to the interface needed by the visitor takes the visitor in the accept() method.  Inside the accept() method the visit method is called by the object which then passes itself to the correct visit() method of the Visitor.<br /><br />Confusing?  Yes, it seems to be rather.<br /><br />I like the quote by Ralph Johnson about Visitor, &ldquo;Most of the time you don&rsquo;t need Visitor, but when you do need Visitor, you really need Visitor!&rdquo;<br /><br />That tells me, to not go out of my way to find uses for Visitor, but to stay far away from it until the light bulb comes on in a particular project where this makes perfect sense.  It may never happen, in which case I won&rsquo;t lose any sleep.<br /><br /><br />Visitor does not apply to ruby or any dynamic language where you can change the class hierarchy whenever you wish, on the fly.  Even so, I am going to show this code in ruby, pretending to be Java.  The interesting thing here is that ruby does not have method overloading since it is dynamically types.  So the actual java example would look different, in that the visit methods would be overloaded with the different types that we know of.  The ruby example has to check inside the visit method for the appropriate type and handle it accordingly.  Method overloading is a nice thing to have when you want it.<br /><br />My <a href="http://github.com/watkyn/scripts/blob/master/patterns/visitor.rb">TreeVisitor</a> example in ruby.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Learn 4 to 6 Editors Adequately]]></title>
+    <link href="http://watkyn.github.io/blog/2009/12/03/Learn-4-to-6-editors-adequately/"/>
+    <updated>2009-12-03T16:16:19-06:00</updated>
+    <id>http://watkyn.github.io/blog/2009/12/03/Learn-4-to-6-editors-adequately</id>
+    <content type="html"><![CDATA[<p>Unfortunately, I suffer from what a coworker of mine calls, editor ADD.  My new motto is this: &ldquo;Learn 4 to 6 editors and learn them adequately.&rdquo;  I have kind of given up on learning one editor very well, since I can&rsquo;t make up my mind.  About a year ago, I narrowed down my list to 4 development tools / editors (Textmate, vim, eclipse, IntelliJ).  I also tried to separate them by operating system.  When I was on the Mac I was going to use IntelliJ for Java work and Textmate for everything else.  On windows it was going to be Eclipse for Java and VIM for everything else.  So far it hasn&rsquo;t been too bad.<br /><br />I was worried that having too many keystrokes in my head would end up becoming a nightmare, but surprisingly, the many different sets of keystrokes can coexist in my mind without too much conflict.  There is roughly a &frac12; hour context switch for me, where keystrokes are sometimes blurred moving from one environment to the other after a prolonged period of using just one.  But for the most part, my brain knows vim, Textmate, eclipse, or IntelliJ, and doesn&rsquo;t seem to complain about the switching.<br /><br />I am not actually advocating this approach to anyone else, but there may be one aspect of learning several editors adequately that has some tangible benefit.  That is, when pair programming with different people, you can adapt to the style of your pair with minimal disruption.  Now, if each person has their own laptop and their own set of tools, then it doesn&rsquo;t really matter.<br /><br />[Update:  I forgot about Xcode.  That makes 5.]<br /><br />Update 2013: Now I am leaning toward jetbrains products with the vim plugin and&nbsp;vim for everything else. (Well, textmate is still handy for stuff as well)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pomodoro and Flow]]></title>
+    <link href="http://watkyn.github.io/blog/2009/12/03/Pomodoro-and-Flow/"/>
+    <updated>2009-12-03T13:11:41-06:00</updated>
+    <id>http://watkyn.github.io/blog/2009/12/03/Pomodoro-and-Flow</id>
+    <content type="html"><![CDATA[<p>I have been hearing about the pomodoro technique and so I started trying it for myself.  I really like the concept, and often times, I need some help staying focused and not getting distracted.  However, when I am tuned in to my code and really focused on what I am doing, I can go for hours at a very high level.  This happened to me lately as I was working on an iPhone project.  I knew what I wanted to get done, and trying to use pomodoro was just getting in the way.<br /><br />When you are in &ldquo;flow&rdquo; from a programmer&rsquo;s perspective, then go with the flow and skip the pomodoro.  I don&rsquo;t want any breaks, especially breaks in my concentration at that point.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Waterfall Presentations]]></title>
+    <link href="http://watkyn.github.io/blog/2009/09/25/Waterfall-presentations/"/>
+    <updated>2009-09-25T16:33:56-05:00</updated>
+    <id>http://watkyn.github.io/blog/2009/09/25/Waterfall-presentations</id>
+    <content type="html"><![CDATA[<p>I just finished watching a presentation on how to incorporate Lean into IT.  After watching the presentation, I realized that most presentations are waterfall.  The really engaging presentations do not usually follow the format we all learned in school:<br /><br />History of Lean<br />How Manufacturing uses Lean<br />How IT does things now<br />Problems we have in delivering things in IT<br />How lean ideas map to IT<br />Practical advice on how to apply lean concepts to IT<br />Questions?<br /><br />The most interesting and engaging parts of a presentation are probably the last two items, the practical advice, and the questions from the audience.  But after being put to sleep for the first 45 minutes, people are not ready to get into the questions.<br /><br />Even if the presentation is interesting, does all the outline verboseness really give people what they want to know?  What would be the Lean way of giving a presentation?<br /><br />You can&rsquo;t just stand up there and ask &ldquo;So, what do you all want to learn about Lean in IT?&rdquo;, can you?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pattern of the Week - Adapter]]></title>
+    <link href="http://watkyn.github.io/blog/2009/09/25/Pattern-of-the-week-Adapter/"/>
+    <updated>2009-09-25T16:33:09-05:00</updated>
+    <id>http://watkyn.github.io/blog/2009/09/25/Pattern-of-the-week-Adapter</id>
+    <content type="html"><![CDATA[<p>From Java Design Patterns:<br /><span class="docEmphStrong">The intent of</span> A<span class="docEmphSmaller">DAPTER</span> <span class="docEmphStrong"><a name="client expects"></a>is to provide the interface that a client expects while using the services of a class with a different interface.<br /><br />This actually makes sense to me right out of the gate.  I&rsquo;ve probably read about and used Adapter before but needed a refresher on what it actually was.<br /><br />So lets say that I have a lab processing class that takes LabOrder objects and processes them somehow.  Another team in my company has a service that supplies LabResults from a different vendor than the one I work with but they like the processing class I made and want me to process their LabResult class also.<br /><br />I see that the objects do similar things but have slightly different methods, so I create an adapter class that implements the LabOrder interface and delegates to the LabResult object that is passed in to the constructor.  No code changes required for the lab processing class.<br /><br />githup <a href="http://github.com/watkyn/scripts/blob/master/patterns/adapter.rb">Adapter</a> code<br /><br /><br /></span></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OCUnit Configuration for iPhone Development]]></title>
+    <link href="http://watkyn.github.io/blog/2009/09/14/OCUnit-Configuration-for-iPhone-Development/"/>
+    <updated>2009-09-14T08:04:55-05:00</updated>
+    <id>http://watkyn.github.io/blog/2009/09/14/OCUnit-Configuration-for-iPhone-Development</id>
+    <content type="html"><![CDATA[<p>On an <span class="blsp-spelling-corrected" id="SPELLING_ERROR_0">iPhone</span> project I am currently working on, I have been experimenting with some unit testing frameworks.  Actually, I tried the <span class="blsp-spelling-error" id="SPELLING_ERROR_1">rbiphonetesting</span> ruby framework from Dr. <span class="blsp-spelling-error" id="SPELLING_ERROR_2">Nic</span> and that got me started down the TDD path on this project.<br /><br />It was actually pretty sweet, since I couldn&rsquo;t test any <span class="blsp-spelling-error" id="SPELLING_ERROR_3">UIKit</span> classes from the ruby framework since it was using <span class="blsp-spelling-error" id="SPELLING_ERROR_4">MacRuby</span> which does not run on the <span class="blsp-spelling-corrected" id="SPELLING_ERROR_5">iPhone</span> <span class="blsp-spelling-error" id="SPELLING_ERROR_6">sdk</span>.  This was a nice constraint, as I was forced to put any code I wanted to test into a non <span class="blsp-spelling-error" id="SPELLING_ERROR_7">UI</span> class.  This helped me clean out the <span class="blsp-spelling-error" id="SPELLING_ERROR_8">UI</span> and delegate to models, presenters, etc.<br /><br />Then I hit an issue with differences in string handling between <span class="blsp-spelling-error" id="SPELLING_ERROR_9">MacRuby</span> and the <span class="blsp-spelling-corrected" id="SPELLING_ERROR_10">iPhone</span> <span class="blsp-spelling-error" id="SPELLING_ERROR_11">sdk</span>.  My unit tests were no longer reliable, since they were passing but when running on the <span class="blsp-spelling-corrected" id="SPELLING_ERROR_12">iPhone</span>, I could obviously see incorrect behavior.<br /><br />I knew going in, that this could be a problem.  It was a fun experiment, and actually gave me a good perspective on testing apps on the <span class="blsp-spelling-corrected" id="SPELLING_ERROR_13">iPhone</span>. <br /><br />I have recently ported all my ruby tests over to <span class="blsp-spelling-error" id="SPELLING_ERROR_14">OCUnit</span> and am back up and running.  If I had started with <span class="blsp-spelling-error" id="SPELLING_ERROR_15">OCUnit</span>, I think my tests may be quite <span class="blsp-spelling-corrected" id="SPELLING_ERROR_16">different</span>, as well as the structure of my object model.<br /><br />One thing that stuck out for me after porting all the tests over to <span class="blsp-spelling-error" id="SPELLING_ERROR_17">OCUnit</span>, is that they are incredibly fast compared to the ruby version.  Which is good, since they run every time I build my code in <span class="blsp-spelling-error" id="SPELLING_ERROR_18">Xcode</span>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Over Releasing Objects in Objective-C]]></title>
+    <link href="http://watkyn.github.io/blog/2009/08/17/Over-releasing-objects-in-Objective-C/"/>
+    <updated>2009-08-17T08:11:41-05:00</updated>
+    <id>http://watkyn.github.io/blog/2009/08/17/Over-releasing-objects-in-Objective-C</id>
+    <content type="html"><![CDATA[<p>I just learned the difference between over releasing an object and attempting to release an unallocated object.
+I saw this example in an iPhone book where an instance variable was being released before it was assigned.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="err">–</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">parserDidStartDocument:</span><span class="p">(</span><span class="n">NSXMLParser</span> <span class="o">*</span><span class="p">)</span><span class="n">parser</span> <span class="p">{</span>
+</span><span class='line'>  <span class="p">[</span><span class="n">tweetsString</span> <span class="n">release</span><span class="p">];</span>
+</span><span class='line'>  <span class="n">tweetsString</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSMutableString</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithCapacity:</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="p">(</span><span class="mi">140</span> <span class="o">+</span> <span class="mi">20</span><span class="p">))</span> <span class="p">];</span>
+</span><span class='line'>  <span class="c1">// more code</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I was wondering why the release on the first line was not blowing up, since I have experienced errors in my code when I over release an object (that is, I call release on an object more than once).<br/>
+So I tried an experiment and put multiple [<span class="blsp-spelling-error" id="SPELLING_ERROR_8">tweetString</span> release]; calls all in a row, thinking this would blow up.
+ But it works just fine.</p>
+
+<p>The reason is that a nil object (one that has never been allocated) is never sent any messages.  There are no NullPointerExceptions since the messages are just discarded. Objective-C is a no-op language on nil, and you can rely on that in your code this way. So it is safe to call release on an unallocated object, but you cannot send release to an object more than once AFTER it has been allocated.<br /><br />I should have realized this before, since this is the way properties work when set to retain.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pattern of the Week - Composite]]></title>
+    <link href="http://watkyn.github.io/blog/2009/06/08/Pattern-of-the-week-Composite/"/>
+    <updated>2009-06-08T08:12:54-05:00</updated>
+    <id>http://watkyn.github.io/blog/2009/06/08/Pattern-of-the-week-Composite</id>
+    <content type="html"><![CDATA[<p>The intent of the COMPOSITE pattern is to let clients treat individual objects and compositions of objects uniformly. (Java Design Patterns)<br /><br />There are objects that have children and there are objects that don&rsquo;t.  The objects that have children can have a common interface with the objects that do not have children, and so Composite.<br /><br />The example I used in my code (see below) was that of a Menu and MenuItems.  Swing uses this model for its menus.  A Menu may or may not have sub menus.  A MenuItem, however, never has sub menus; it is always the end of the road, a leaf.<br /><br />A process may want to traverse a tree of objects but it does not want to have to figure out who has child elements and who does.  Composite attempts to solve this problem by establishing a common interface between the two types.  Then the object that has children can traverse its children when the common method is called and call the common method on the child objects.<br /><br />Here is a <a href="http://github.com/watkyn/scripts/blob/4666ef973f91edc6d4fbf8ca5f8ecee3e269a734/patterns/composite.rb">link to the ruby code</a> I wrote up to help me understand Composite better.<br /><br /><br />I ran into another good example over the weekend.  We went to a tree identification outing and the naturalist there had a identification key.  It used decision tree logic, and I thought to myself, &ldquo;Hey, the Composite pattern in real life!&rdquo;.  What a geek I am sometimes.<br /><br />Each question led to either one or many follow up questions.  I thought of putting the logic into an iPhone application, and realized I could model the questions as Composites.  Some questions would be trees, and others would be leaves.  Perfect for a tree identification app!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pattern of the Week - Builder]]></title>
+    <link href="http://watkyn.github.io/blog/2009/05/22/Pattern-of-the-week-Builder/"/>
+    <updated>2009-05-22T16:17:24-05:00</updated>
+    <id>http://watkyn.github.io/blog/2009/05/22/Pattern-of-the-week-Builder</id>
+    <content type="html"><![CDATA[<p>The intent of the BUILDER pattern is to move the construction logic for an object outside the class to be instantiated.<br />A builder class offloads construction logic from a domain class and can accept initialization parameters gradually, as a parser discovers them.<br />(Java Design Patterns)<br /><br />A common motivation for refactoring to a Builder is to simplify the client code that creates complex objects.<br />(Refactoring to Patterns)<br /><br />One place that I frequently will use the builder pattern in the future is creating objects for my unit tests in Java.  Test Data Builder works really well for this since it allows for having immutable objects without having to specify all the parameters in the constructor of the class.  It also allows for introducing test doubles easily for only specific cases, etc.<br /><br /><br />For Test Data Builders in Java see Jay Fields <a href="http://blog.jayfields.com/2009/01/most-java-unit-tests-consist-of-class.html">article</a>.<br /><br />For a Ruby test data builder, check out <a href="http://github.com/thoughtbot/factory_girl/tree/master">Factory Girl</a><br /><br /><br />Immutability simplifies concurrency issues, but complicates construction by forcing all state to be passed into the constructor.  When we were using Google Protocol Buffers, I noticed their diligence in making sure the only mutable objects were Builder objects.  This gives us the flexibility of building up the data in the builder class however it seems to work best, but then once the REAL object is built, it is immutable.<br /><br /><br />Whenever there is pain putting together a complex object graph, test objects, composite objects, and the like, the Builder pattern is very useful.</p>
+]]></content>
+  </entry>
   
 </feed>

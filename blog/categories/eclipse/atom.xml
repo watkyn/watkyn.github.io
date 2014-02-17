@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Eclipse | ...]]></title>
+  <link href="http://watkyn.github.io/blog/categories/eclipse/atom.xml" rel="self"/>
+  <link href="http://watkyn.github.io/"/>
+  <updated>2014-02-17T11:10:35-06:00</updated>
+  <id>http://watkyn.github.io/</id>
+  <author>
+    <name><![CDATA[Tony Eichelberger]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SVN Eclipse Mountain Lion and Homebrew]]></title>
+    <link href="http://watkyn.github.io/blog/2013/02/14/SVN-Eclipse-Mountain-Lion-and-Homebrew/"/>
+    <updated>2013-02-14T08:28:37-06:00</updated>
+    <id>http://watkyn.github.io/blog/2013/02/14/SVN-Eclipse-Mountain-Lion-and-Homebrew</id>
+    <content type="html"><![CDATA[<p>I was frustrated trying to figure out how to get subversion installed on my OSX machine so that it would be compatible with Eclipse. I wanted to go with the JavaHL svn adapter but I had already installed svn using homebrew.<br />I tried to reinstall svn with homebrew like this but got an error:</p>
+
+<br /><pre>$ brew install --universal --java subversion<br />   Error: subversion dependency neon not installed with:<br />     --universal<br /><br /></pre>There are several dependencies that need to be uninstalled before installing subversion again with --univeral and --java options <br />For me it was this:<br /><br /><pre><br />$ brew rm neon<br />$ brew rm sqlite<br />$ brew rm serf<br /></pre><br />Then this worked:<br /><pre>$ brew install --universal --java subversion</pre>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Objective-c | ...]]></title>
+  <link href="http://watkyn.github.io/blog/categories/objective-c/atom.xml" rel="self"/>
+  <link href="http://watkyn.github.io/"/>
+  <updated>2014-02-17T11:10:35-06:00</updated>
+  <id>http://watkyn.github.io/</id>
+  <author>
+    <name><![CDATA[Tony Eichelberger]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Objective-C Scarcity Continues]]></title>
+    <link href="http://watkyn.github.io/blog/2010/04/12/Objective-C-scarcity-continues/"/>
+    <updated>2010-04-12T16:54:23-05:00</updated>
+    <id>http://watkyn.github.io/blog/2010/04/12/Objective-C-scarcity-continues</id>
+    <content type="html"><![CDATA[<p>There is a lot of angst among developers of the iPhone/iPad community over <a href="http://daringfireball.net/2010/04/iphone_agreement_bans_flash_compiler">the language restrictions of the new iOS 4.0 license</a>, and rightfully so.  Mobile Orchard closed shop because of it and there may be more high profile developers leaving the Apple platform in the future.<br /><br />There is one positive for the Objective-C developers, though.  The scarcity of their skill set will most likely continue.  Objective-C developers have experienced a renaissance in their once obscure language and frameworks, but now they are the chosen ones and they get paid like it.  Scarcity will give them the advantage in the market, driving up their rates/salaries as long as Apple continues to dominate in the arena of sales.<br /><br />This may be the only positive that comes from Apple&rsquo;s decision, and it is only a positive for a minority of developers, so in the end &hellip; blech.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OCUnit Configuration for iPhone Development]]></title>
+    <link href="http://watkyn.github.io/blog/2009/09/14/OCUnit-Configuration-for-iPhone-Development/"/>
+    <updated>2009-09-14T08:04:55-05:00</updated>
+    <id>http://watkyn.github.io/blog/2009/09/14/OCUnit-Configuration-for-iPhone-Development</id>
+    <content type="html"><![CDATA[<p>On an <span class="blsp-spelling-corrected" id="SPELLING_ERROR_0">iPhone</span> project I am currently working on, I have been experimenting with some unit testing frameworks.  Actually, I tried the <span class="blsp-spelling-error" id="SPELLING_ERROR_1">rbiphonetesting</span> ruby framework from Dr. <span class="blsp-spelling-error" id="SPELLING_ERROR_2">Nic</span> and that got me started down the TDD path on this project.<br /><br />It was actually pretty sweet, since I couldn&rsquo;t test any <span class="blsp-spelling-error" id="SPELLING_ERROR_3">UIKit</span> classes from the ruby framework since it was using <span class="blsp-spelling-error" id="SPELLING_ERROR_4">MacRuby</span> which does not run on the <span class="blsp-spelling-corrected" id="SPELLING_ERROR_5">iPhone</span> <span class="blsp-spelling-error" id="SPELLING_ERROR_6">sdk</span>.  This was a nice constraint, as I was forced to put any code I wanted to test into a non <span class="blsp-spelling-error" id="SPELLING_ERROR_7">UI</span> class.  This helped me clean out the <span class="blsp-spelling-error" id="SPELLING_ERROR_8">UI</span> and delegate to models, presenters, etc.<br /><br />Then I hit an issue with differences in string handling between <span class="blsp-spelling-error" id="SPELLING_ERROR_9">MacRuby</span> and the <span class="blsp-spelling-corrected" id="SPELLING_ERROR_10">iPhone</span> <span class="blsp-spelling-error" id="SPELLING_ERROR_11">sdk</span>.  My unit tests were no longer reliable, since they were passing but when running on the <span class="blsp-spelling-corrected" id="SPELLING_ERROR_12">iPhone</span>, I could obviously see incorrect behavior.<br /><br />I knew going in, that this could be a problem.  It was a fun experiment, and actually gave me a good perspective on testing apps on the <span class="blsp-spelling-corrected" id="SPELLING_ERROR_13">iPhone</span>. <br /><br />I have recently ported all my ruby tests over to <span class="blsp-spelling-error" id="SPELLING_ERROR_14">OCUnit</span> and am back up and running.  If I had started with <span class="blsp-spelling-error" id="SPELLING_ERROR_15">OCUnit</span>, I think my tests may be quite <span class="blsp-spelling-corrected" id="SPELLING_ERROR_16">different</span>, as well as the structure of my object model.<br /><br />One thing that stuck out for me after porting all the tests over to <span class="blsp-spelling-error" id="SPELLING_ERROR_17">OCUnit</span>, is that they are incredibly fast compared to the ruby version.  Which is good, since they run every time I build my code in <span class="blsp-spelling-error" id="SPELLING_ERROR_18">Xcode</span>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Over Releasing Objects in Objective-C]]></title>
+    <link href="http://watkyn.github.io/blog/2009/08/17/Over-releasing-objects-in-Objective-C/"/>
+    <updated>2009-08-17T08:11:41-05:00</updated>
+    <id>http://watkyn.github.io/blog/2009/08/17/Over-releasing-objects-in-Objective-C</id>
+    <content type="html"><![CDATA[<p>I just learned the difference between over releasing an object and attempting to release an unallocated object.
+I saw this example in an iPhone book where an instance variable was being released before it was assigned.</p>
+
+<p><code>objective-c
+– (void)parserDidStartDocument:(NSXMLParser *)parser {
+  [tweetsString release];
+  tweetsString = [[NSMutableString alloc] initWithCapacity: (20 * (140 + 20)) ];
+  // more code
+}
+</code>
+I was wondering why the release on the first line was not blowing up, since I have experienced errors in my code when I over release an object (that is, I call release on an object more than once).<br/>
+So I tried an experiment and put multiple [<span class="blsp-spelling-error" id="SPELLING_ERROR_8">tweetString</span> release]; calls all in a row, thinking this would blow up.
+ But it works just fine.</p>
+
+<p>The reason is that a nil object (one that has never been allocated) is never sent any messages.  There are no NullPointerExceptions since the messages are just discarded. Objective-C is a no-op language on nil, and you can rely on that in your code this way. So it is safe to call release on an unallocated object, but you cannot send release to an object more than once AFTER it has been allocated.<br /><br />I should have realized this before, since this is the way properties work when set to retain.</p>
+]]></content>
+  </entry>
+  
+</feed>
