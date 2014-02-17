@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Programming | . .]]></title>
-  <link href="http://watkyn.github.io/blog/categories/programming/atom.xml" rel="self"/>
-  <link href="http://watkyn.github.io/"/>
-  <updated>2014-02-17T15:10:15-06:00</updated>
-  <id>http://watkyn.github.io/</id>
+  <link href="http://www.watkyn.com/blog/categories/programming/atom.xml" rel="self"/>
+  <link href="http://www.watkyn.com/"/>
+  <updated>2014-02-17T16:29:58-06:00</updated>
+  <id>http://www.watkyn.com/</id>
   <author>
     <name><![CDATA[Tony Eichelberger]]></name>
     
@@ -15,18 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[Learn 4 to 6 Editors Adequately]]></title>
-    <link href="http://watkyn.github.io/blog/2009/12/03/Learn-4-to-6-editors-adequately/"/>
+    <link href="http://www.watkyn.com/blog/2009/12/03/Learn-4-to-6-editors-adequately/"/>
     <updated>2009-12-03T16:16:19-06:00</updated>
-    <id>http://watkyn.github.io/blog/2009/12/03/Learn-4-to-6-editors-adequately</id>
+    <id>http://www.watkyn.com/blog/2009/12/03/Learn-4-to-6-editors-adequately</id>
     <content type="html"><![CDATA[<p>Unfortunately, I suffer from what a coworker of mine calls, editor ADD.  My new motto is this: &ldquo;Learn 4 to 6 editors and learn them adequately.&rdquo;  I have kind of given up on learning one editor very well, since I can&rsquo;t make up my mind.  About a year ago, I narrowed down my list to 4 development tools / editors (Textmate, vim, eclipse, IntelliJ).  I also tried to separate them by operating system.  When I was on the Mac I was going to use IntelliJ for Java work and Textmate for everything else.  On windows it was going to be Eclipse for Java and VIM for everything else.  So far it hasn&rsquo;t been too bad.<br /><br />I was worried that having too many keystrokes in my head would end up becoming a nightmare, but surprisingly, the many different sets of keystrokes can coexist in my mind without too much conflict.  There is roughly a &frac12; hour context switch for me, where keystrokes are sometimes blurred moving from one environment to the other after a prolonged period of using just one.  But for the most part, my brain knows vim, Textmate, eclipse, or IntelliJ, and doesn&rsquo;t seem to complain about the switching.<br /><br />I am not actually advocating this approach to anyone else, but there may be one aspect of learning several editors adequately that has some tangible benefit.  That is, when pair programming with different people, you can adapt to the style of your pair with minimal disruption.  Now, if each person has their own laptop and their own set of tools, then it doesn&rsquo;t really matter.<br /><br />[Update:  I forgot about Xcode.  That makes 5.]<br /><br />Update 2013: Now I am leaning toward jetbrains products with the vim plugin and&nbsp;vim for everything else. (Well, textmate is still handy for stuff as well)</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Pomodoro and Flow]]></title>
-    <link href="http://watkyn.github.io/blog/2009/12/03/Pomodoro-and-Flow/"/>
+    <link href="http://www.watkyn.com/blog/2009/12/03/Pomodoro-and-Flow/"/>
     <updated>2009-12-03T13:11:41-06:00</updated>
-    <id>http://watkyn.github.io/blog/2009/12/03/Pomodoro-and-Flow</id>
+    <id>http://www.watkyn.com/blog/2009/12/03/Pomodoro-and-Flow</id>
     <content type="html"><![CDATA[<p>I have been hearing about the pomodoro technique and so I started trying it for myself.  I really like the concept, and often times, I need some help staying focused and not getting distracted.  However, when I am tuned in to my code and really focused on what I am doing, I can go for hours at a very high level.  This happened to me lately as I was working on an iPhone project.  I knew what I wanted to get done, and trying to use pomodoro was just getting in the way.<br /><br />When you are in &ldquo;flow&rdquo; from a programmer&rsquo;s perspective, then go with the flow and skip the pomodoro.  I don&rsquo;t want any breaks, especially breaks in my concentration at that point.</p>
 ]]></content>
   </entry>

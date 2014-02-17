@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Iphone | . .]]></title>
-  <link href="http://watkyn.github.io/blog/categories/iphone/atom.xml" rel="self"/>
-  <link href="http://watkyn.github.io/"/>
-  <updated>2014-02-17T15:10:15-06:00</updated>
-  <id>http://watkyn.github.io/</id>
+  <link href="http://www.watkyn.com/blog/categories/iphone/atom.xml" rel="self"/>
+  <link href="http://www.watkyn.com/"/>
+  <updated>2014-02-17T16:29:58-06:00</updated>
+  <id>http://www.watkyn.com/</id>
   <author>
     <name><![CDATA[Tony Eichelberger]]></name>
     
@@ -15,27 +15,27 @@
   
   <entry>
     <title type="html"><![CDATA[Objective-C Scarcity Continues]]></title>
-    <link href="http://watkyn.github.io/blog/2010/04/12/Objective-C-scarcity-continues/"/>
+    <link href="http://www.watkyn.com/blog/2010/04/12/Objective-C-scarcity-continues/"/>
     <updated>2010-04-12T16:54:23-05:00</updated>
-    <id>http://watkyn.github.io/blog/2010/04/12/Objective-C-scarcity-continues</id>
+    <id>http://www.watkyn.com/blog/2010/04/12/Objective-C-scarcity-continues</id>
     <content type="html"><![CDATA[<p>There is a lot of angst among developers of the iPhone/iPad community over <a href="http://daringfireball.net/2010/04/iphone_agreement_bans_flash_compiler">the language restrictions of the new iOS 4.0 license</a>, and rightfully so.  Mobile Orchard closed shop because of it and there may be more high profile developers leaving the Apple platform in the future.<br /><br />There is one positive for the Objective-C developers, though.  The scarcity of their skill set will most likely continue.  Objective-C developers have experienced a renaissance in their once obscure language and frameworks, but now they are the chosen ones and they get paid like it.  Scarcity will give them the advantage in the market, driving up their rates/salaries as long as Apple continues to dominate in the arena of sales.<br /><br />This may be the only positive that comes from Apple&rsquo;s decision, and it is only a positive for a minority of developers, so in the end &hellip; blech.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[OCUnit Configuration for iPhone Development]]></title>
-    <link href="http://watkyn.github.io/blog/2009/09/14/OCUnit-Configuration-for-iPhone-Development/"/>
+    <link href="http://www.watkyn.com/blog/2009/09/14/OCUnit-Configuration-for-iPhone-Development/"/>
     <updated>2009-09-14T08:04:55-05:00</updated>
-    <id>http://watkyn.github.io/blog/2009/09/14/OCUnit-Configuration-for-iPhone-Development</id>
+    <id>http://www.watkyn.com/blog/2009/09/14/OCUnit-Configuration-for-iPhone-Development</id>
     <content type="html"><![CDATA[<p>On an <span class="blsp-spelling-corrected" id="SPELLING_ERROR_0">iPhone</span> project I am currently working on, I have been experimenting with some unit testing frameworks.  Actually, I tried the <span class="blsp-spelling-error" id="SPELLING_ERROR_1">rbiphonetesting</span> ruby framework from Dr. <span class="blsp-spelling-error" id="SPELLING_ERROR_2">Nic</span> and that got me started down the TDD path on this project.<br /><br />It was actually pretty sweet, since I couldn&rsquo;t test any <span class="blsp-spelling-error" id="SPELLING_ERROR_3">UIKit</span> classes from the ruby framework since it was using <span class="blsp-spelling-error" id="SPELLING_ERROR_4">MacRuby</span> which does not run on the <span class="blsp-spelling-corrected" id="SPELLING_ERROR_5">iPhone</span> <span class="blsp-spelling-error" id="SPELLING_ERROR_6">sdk</span>.  This was a nice constraint, as I was forced to put any code I wanted to test into a non <span class="blsp-spelling-error" id="SPELLING_ERROR_7">UI</span> class.  This helped me clean out the <span class="blsp-spelling-error" id="SPELLING_ERROR_8">UI</span> and delegate to models, presenters, etc.<br /><br />Then I hit an issue with differences in string handling between <span class="blsp-spelling-error" id="SPELLING_ERROR_9">MacRuby</span> and the <span class="blsp-spelling-corrected" id="SPELLING_ERROR_10">iPhone</span> <span class="blsp-spelling-error" id="SPELLING_ERROR_11">sdk</span>.  My unit tests were no longer reliable, since they were passing but when running on the <span class="blsp-spelling-corrected" id="SPELLING_ERROR_12">iPhone</span>, I could obviously see incorrect behavior.<br /><br />I knew going in, that this could be a problem.  It was a fun experiment, and actually gave me a good perspective on testing apps on the <span class="blsp-spelling-corrected" id="SPELLING_ERROR_13">iPhone</span>. <br /><br />I have recently ported all my ruby tests over to <span class="blsp-spelling-error" id="SPELLING_ERROR_14">OCUnit</span> and am back up and running.  If I had started with <span class="blsp-spelling-error" id="SPELLING_ERROR_15">OCUnit</span>, I think my tests may be quite <span class="blsp-spelling-corrected" id="SPELLING_ERROR_16">different</span>, as well as the structure of my object model.<br /><br />One thing that stuck out for me after porting all the tests over to <span class="blsp-spelling-error" id="SPELLING_ERROR_17">OCUnit</span>, is that they are incredibly fast compared to the ruby version.  Which is good, since they run every time I build my code in <span class="blsp-spelling-error" id="SPELLING_ERROR_18">Xcode</span>.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Over Releasing Objects in Objective-C]]></title>
-    <link href="http://watkyn.github.io/blog/2009/08/17/Over-releasing-objects-in-Objective-C/"/>
+    <link href="http://www.watkyn.com/blog/2009/08/17/Over-releasing-objects-in-Objective-C/"/>
     <updated>2009-08-17T08:11:41-05:00</updated>
-    <id>http://watkyn.github.io/blog/2009/08/17/Over-releasing-objects-in-Objective-C</id>
+    <id>http://www.watkyn.com/blog/2009/08/17/Over-releasing-objects-in-Objective-C</id>
     <content type="html"><![CDATA[<p>I just learned the difference between over releasing an object and attempting to release an unallocated object.
 I saw this example in an iPhone book where an instance variable was being released before it was assigned.</p>
 
@@ -56,9 +56,9 @@ So I tried an experiment and put multiple [<span class="blsp-spelling-error" id=
   
   <entry>
     <title type="html"><![CDATA[IBOutlets and Interface Builder]]></title>
-    <link href="http://watkyn.github.io/blog/2009/04/06/IBOutlets-and-Interface-Builder/"/>
+    <link href="http://www.watkyn.com/blog/2009/04/06/IBOutlets-and-Interface-Builder/"/>
     <updated>2009-04-06T09:56:00-05:00</updated>
-    <id>http://watkyn.github.io/blog/2009/04/06/IBOutlets-and-Interface-Builder</id>
+    <id>http://www.watkyn.com/blog/2009/04/06/IBOutlets-and-Interface-Builder</id>
     <content type="html"><![CDATA[<p>It has taken me about 5 sessions of working through the <a href="http://www.pragprog.com/screencasts/v-bdiphone/writing-your-first-iphone-application">Pragmatic Programmers iPhone screencasts</a> before I am starting to feel comfortable &ldquo;wiring up&rdquo; components through Interface Builder.<br /><br />It really is a &ldquo;visual&rdquo; dependency injection framework.  I specify the class that I want access to in my header file and optionally have properties set for it.  Then, when I drag the visual representation of the class to another visual representation of another class, it tells the compiler to inject this class into that class.  <br /><br />Connecting, via the right click drag and drop, is essentially setting up a configuration that will inject that component into your class at runtime.  Before today, I didn&rsquo;t really notice the list of IBOutlets each component was expecting to have set and the list that each component was referenced by.  For some reason, that was the point at which everything started to click.<br /><br />Before today, I just saw Bill D. dragging stuff around and &ldquo;wiring things together&rdquo;.  Then I would try to start from scratch without following him step by step and get totally lost as soon as I had to figure out which components to hook up to which controllers, etc.<br /><br />I don&rsquo;t know why it has helped me to think of it in terms of dependency injection, but if it helps, it helps.  Probably more than anything, it just takes repetition until something clicks.  One or two more episodes and possibly a small project start to finish, and I think it will be cemented in the brain paths for a good long time.</p>
 ]]></content>
   </entry>

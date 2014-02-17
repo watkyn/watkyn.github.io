@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Vim | . .]]></title>
-  <link href="http://watkyn.github.io/blog/categories/vim/atom.xml" rel="self"/>
-  <link href="http://watkyn.github.io/"/>
-  <updated>2014-02-17T15:10:15-06:00</updated>
-  <id>http://watkyn.github.io/</id>
+  <link href="http://www.watkyn.com/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://www.watkyn.com/"/>
+  <updated>2014-02-17T16:29:58-06:00</updated>
+  <id>http://www.watkyn.com/</id>
   <author>
     <name><![CDATA[Tony Eichelberger]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Vim Compiled With Ruby Support on Lion]]></title>
-    <link href="http://watkyn.github.io/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion/"/>
+    <link href="http://www.watkyn.com/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion/"/>
     <updated>2012-01-06T15:03:30-06:00</updated>
-    <id>http://watkyn.github.io/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion</id>
+    <id>http://www.watkyn.com/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion</id>
     <content type="html"><![CDATA[<p>If you are a vim user on a Mac and you also like the <a href="https://github.com/wincent/Command-T">Command-t</a> plugin you have no doubt had to deal with the default vim, which does not come with ruby support out of the box. I have resorted to using <a href="http://code.google.com/p/macvim/">MacVim</a> for most of my needs but once in a while I wish Command-t was there for me in a vim terminal (read tmux).<br /> <br />Well, I just found out that MacVim ships with a Vim and MacVim executable, so just use that.<br /> <br />I added this alias to my bash profile and all was good:<br /><br /><span style="font-weight:bold;">alias vim=&#39;/Applications/MacVim.app/Contents/MacOS/Vim&#39;</span><br /><br />That will take precedence over /usr/bin/vim (except if you do sudo vim, then you are back to the old /usr/bin/vim).<br /> <br />Good enough, is what I say.<br /> <br /><br />PS. I made a symlink from /Applications/MacVim.app/Contents/MacOS/Vim into /usr/bin/vim and it didn&#39;t work quite right. I got a bunch of warnings about color scheme, etc. Not sure why, but I didn&rsquo;t feel the need to dig deeper. That is why I went the alias route.</p>
 ]]></content>
   </entry>
