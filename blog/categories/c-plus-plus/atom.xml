@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
+<<<<<<< HEAD
   <title><![CDATA[Category: C++ | . .]]></title>
   <link href="http://www.watkyn.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://www.watkyn.com/"/>
   <updated>2014-02-17T14:59:39-06:00</updated>
   <id>http://www.watkyn.com/</id>
+=======
+  <title><![CDATA[Category: C++ | ...]]></title>
+  <link href="http://watkyn.github.io/blog/categories/c-plus-plus/atom.xml" rel="self"/>
+  <link href="http://watkyn.github.io/"/>
+  <updated>2014-02-17T11:17:18-06:00</updated>
+  <id>http://watkyn.github.io/</id>
+>>>>>>> 250457ca635f04d71fc0a25a88c9457b19607d3c
   <author>
     <name><![CDATA[Tony Eichelberger]]></name>
     
@@ -15,9 +23,15 @@
   
   <entry>
     <title type="html"><![CDATA[Using Sqlite3 in a Visual Studio 2008 C++ Application]]></title>
+<<<<<<< HEAD
     <link href="http://www.watkyn.com/blog/2008/07/09/using-sqlite3-in-a-visual-studio-2008-c-plus-plus-application/"/>
     <updated>2008-07-09T10:14:36-05:00</updated>
     <id>http://www.watkyn.com/blog/2008/07/09/using-sqlite3-in-a-visual-studio-2008-c-plus-plus-application</id>
+=======
+    <link href="http://watkyn.github.io/blog/2008/07/09/using-sqlite3-in-a-visual-studio-2008-c-plus-plus-application/"/>
+    <updated>2008-07-09T10:14:36-05:00</updated>
+    <id>http://watkyn.github.io/blog/2008/07/09/using-sqlite3-in-a-visual-studio-2008-c-plus-plus-application</id>
+>>>>>>> 250457ca635f04d71fc0a25a88c9457b19607d3c
     <content type="html"><![CDATA[<p>I had a terrible time finding out how to get sqlite working with VC++ using the windows binaries from the sqlite download page. Most of the trouble was from me being a complete newb to VC++ but in the end I got it working. Here are the steps to follow along for next time.</p>
 
 <ol>

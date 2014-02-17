@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
+<<<<<<< HEAD
   <title><![CDATA[Category: Agile | . .]]></title>
   <link href="http://www.watkyn.com/blog/categories/agile/atom.xml" rel="self"/>
   <link href="http://www.watkyn.com/"/>
   <updated>2014-02-17T14:59:39-06:00</updated>
   <id>http://www.watkyn.com/</id>
+=======
+  <title><![CDATA[Category: Agile | ...]]></title>
+  <link href="http://watkyn.github.io/blog/categories/agile/atom.xml" rel="self"/>
+  <link href="http://watkyn.github.io/"/>
+  <updated>2014-02-17T11:17:18-06:00</updated>
+  <id>http://watkyn.github.io/</id>
+>>>>>>> 250457ca635f04d71fc0a25a88c9457b19607d3c
   <author>
     <name><![CDATA[Tony Eichelberger]]></name>
     
@@ -15,9 +23,15 @@
   
   <entry>
     <title type="html"><![CDATA[Waterfall Presentations]]></title>
+<<<<<<< HEAD
     <link href="http://www.watkyn.com/blog/2009/09/25/Waterfall-presentations/"/>
     <updated>2009-09-25T16:33:56-05:00</updated>
     <id>http://www.watkyn.com/blog/2009/09/25/Waterfall-presentations</id>
+=======
+    <link href="http://watkyn.github.io/blog/2009/09/25/Waterfall-presentations/"/>
+    <updated>2009-09-25T16:33:56-05:00</updated>
+    <id>http://watkyn.github.io/blog/2009/09/25/Waterfall-presentations</id>
+>>>>>>> 250457ca635f04d71fc0a25a88c9457b19607d3c
     <content type="html"><![CDATA[<p>I just finished watching a presentation on how to incorporate Lean into IT.  After watching the presentation, I realized that most presentations are waterfall.  The really engaging presentations do not usually follow the format we all learned in school:<br /><br />History of Lean<br />How Manufacturing uses Lean<br />How IT does things now<br />Problems we have in delivering things in IT<br />How lean ideas map to IT<br />Practical advice on how to apply lean concepts to IT<br />Questions?<br /><br />The most interesting and engaging parts of a presentation are probably the last two items, the practical advice, and the questions from the audience.  But after being put to sleep for the first 45 minutes, people are not ready to get into the questions.<br /><br />Even if the presentation is interesting, does all the outline verboseness really give people what they want to know?  What would be the Lean way of giving a presentation?<br /><br />You can&rsquo;t just stand up there and ask &ldquo;So, what do you all want to learn about Lean in IT?&rdquo;, can you?</p>
 ]]></content>
   </entry>
