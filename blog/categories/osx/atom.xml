@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-<<<<<<< HEAD
   <title><![CDATA[Category: Osx | . .]]></title>
   <link href="http://www.watkyn.com/blog/categories/osx/atom.xml" rel="self"/>
   <link href="http://www.watkyn.com/"/>
   <updated>2014-02-17T14:59:39-06:00</updated>
   <id>http://www.watkyn.com/</id>
-=======
-  <title><![CDATA[Category: Osx | ...]]></title>
-  <link href="http://watkyn.github.io/blog/categories/osx/atom.xml" rel="self"/>
-  <link href="http://watkyn.github.io/"/>
-  <updated>2014-02-17T11:17:18-06:00</updated>
-  <id>http://watkyn.github.io/</id>
->>>>>>> 250457ca635f04d71fc0a25a88c9457b19607d3c
   <author>
     <name><![CDATA[Tony Eichelberger]]></name>
     
@@ -23,15 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[SVN Eclipse Mountain Lion and Homebrew]]></title>
-<<<<<<< HEAD
     <link href="http://www.watkyn.com/blog/2013/02/14/SVN-Eclipse-Mountain-Lion-and-Homebrew/"/>
     <updated>2013-02-14T08:28:37-06:00</updated>
     <id>http://www.watkyn.com/blog/2013/02/14/SVN-Eclipse-Mountain-Lion-and-Homebrew</id>
-=======
-    <link href="http://watkyn.github.io/blog/2013/02/14/SVN-Eclipse-Mountain-Lion-and-Homebrew/"/>
-    <updated>2013-02-14T08:28:37-06:00</updated>
-    <id>http://watkyn.github.io/blog/2013/02/14/SVN-Eclipse-Mountain-Lion-and-Homebrew</id>
->>>>>>> 250457ca635f04d71fc0a25a88c9457b19607d3c
     <content type="html"><![CDATA[<p>I was frustrated trying to figure out how to get subversion installed on my OSX machine so that it would be compatible with Eclipse. I wanted to go with the JavaHL svn adapter but I had already installed svn using homebrew.<br />I tried to reinstall svn with homebrew like this but got an error:</p>
 
 <br /><pre>$ brew install --universal --java subversion<br />   Error: subversion dependency neon not installed with:<br />     --universal<br /><br /></pre>There are several dependencies that need to be uninstalled before installing subversion again with --univeral and --java options <br />For me it was this:<br /><br /><pre><br />$ brew rm neon<br />$ brew rm sqlite<br />$ brew rm serf<br /></pre><br />Then this worked:<br /><pre>$ brew install --universal --java subversion</pre>
@@ -41,30 +27,18 @@
   
   <entry>
     <title type="html"><![CDATA[Updating Rubygems on an Old 10.5 Leopard Machine]]></title>
-<<<<<<< HEAD
     <link href="http://www.watkyn.com/blog/2012/01/06/Updating-rubygems-on-an-old-10.5-Leopard-machine/"/>
     <updated>2012-01-06T15:04:18-06:00</updated>
     <id>http://www.watkyn.com/blog/2012/01/06/Updating-rubygems-on-an-old-10.5-Leopard-machine</id>
-=======
-    <link href="http://watkyn.github.io/blog/2012/01/06/Updating-rubygems-on-an-old-10.5-Leopard-machine/"/>
-    <updated>2012-01-06T15:04:18-06:00</updated>
-    <id>http://watkyn.github.io/blog/2012/01/06/Updating-rubygems-on-an-old-10.5-Leopard-machine</id>
->>>>>>> 250457ca635f04d71fc0a25a88c9457b19607d3c
     <content type="html"><![CDATA[<p>I ran into this problem today when trying to update my ruby gems on a fresh OSX 10.5 machine for testing:<br /><br />Updating RubyGems&hellip;<br />ERROR:  While executing gem &hellip; (Gem::RemoteSourceException)<br />    HTTP Response 302 fetching <a href="http://gems.rubyforge.org/yaml">http://gems.rubyforge.org/yaml</a><br /><br /><br />After a little googling I saw where gems were stored on S3 so I just added the &mdash;source option and that worked.  Here is the command for posterity.<br /><br />gem update &mdash;system &mdash;source <a href="http://production.s3.rubygems.org/">http://production.s3.rubygems.org/</a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Vim Compiled With Ruby Support on Lion]]></title>
-<<<<<<< HEAD
     <link href="http://www.watkyn.com/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion/"/>
     <updated>2012-01-06T15:03:30-06:00</updated>
     <id>http://www.watkyn.com/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion</id>
-=======
-    <link href="http://watkyn.github.io/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion/"/>
-    <updated>2012-01-06T15:03:30-06:00</updated>
-    <id>http://watkyn.github.io/blog/2012/01/06/vim-compiled-with-ruby-support-on-Lion</id>
->>>>>>> 250457ca635f04d71fc0a25a88c9457b19607d3c
     <content type="html"><![CDATA[<p>If you are a vim user on a Mac and you also like the <a href="https://github.com/wincent/Command-T">Command-t</a> plugin you have no doubt had to deal with the default vim, which does not come with ruby support out of the box. I have resorted to using <a href="http://code.google.com/p/macvim/">MacVim</a> for most of my needs but once in a while I wish Command-t was there for me in a vim terminal (read tmux).<br /> <br />Well, I just found out that MacVim ships with a Vim and MacVim executable, so just use that.<br /> <br />I added this alias to my bash profile and all was good:<br /><br /><span style="font-weight:bold;">alias vim=&#39;/Applications/MacVim.app/Contents/MacOS/Vim&#39;</span><br /><br />That will take precedence over /usr/bin/vim (except if you do sudo vim, then you are back to the old /usr/bin/vim).<br /> <br />Good enough, is what I say.<br /> <br /><br />PS. I made a symlink from /Applications/MacVim.app/Contents/MacOS/Vim into /usr/bin/vim and it didn&#39;t work quite right. I got a bunch of warnings about color scheme, etc. Not sure why, but I didn&rsquo;t feel the need to dig deeper. That is why I went the alias route.</p>
 ]]></content>
   </entry>

@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-<<<<<<< HEAD
   <title><![CDATA[Category: Refactoring | . .]]></title>
   <link href="http://www.watkyn.com/blog/categories/refactoring/atom.xml" rel="self"/>
   <link href="http://www.watkyn.com/"/>
   <updated>2014-02-17T14:59:39-06:00</updated>
   <id>http://www.watkyn.com/</id>
-=======
-  <title><![CDATA[Category: Refactoring | ...]]></title>
-  <link href="http://watkyn.github.io/blog/categories/refactoring/atom.xml" rel="self"/>
-  <link href="http://watkyn.github.io/"/>
-  <updated>2014-02-17T11:17:18-06:00</updated>
-  <id>http://watkyn.github.io/</id>
->>>>>>> 250457ca635f04d71fc0a25a88c9457b19607d3c
   <author>
     <name><![CDATA[Tony Eichelberger]]></name>
     
@@ -23,30 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[Legacy Code - Extract Interface]]></title>
-<<<<<<< HEAD
     <link href="http://www.watkyn.com/blog/2010/01/11/Legacy-Code-Extract-Interface/"/>
     <updated>2010-01-11T08:53:29-06:00</updated>
     <id>http://www.watkyn.com/blog/2010/01/11/Legacy-Code-Extract-Interface</id>
-=======
-    <link href="http://watkyn.github.io/blog/2010/01/11/Legacy-Code-Extract-Interface/"/>
-    <updated>2010-01-11T08:53:29-06:00</updated>
-    <id>http://watkyn.github.io/blog/2010/01/11/Legacy-Code-Extract-Interface</id>
->>>>>>> 250457ca635f04d71fc0a25a88c9457b19607d3c
     <content type="html"><![CDATA[<p>Micheal Feathers book &ldquo;Working with legacy code &rdquo; has a chapter called Extract Interface.  This is taken from Fowler&rsquo;s Refactoring book and applied to legacy code.<br /><br />The motivation for extracting an interface is different between the two books.  Refactoring looks at this from the point of code organization and structure.  Working With Legacy Code looks at this as a dependency breaking mechanism to get a class under test.<br /><br />Both aims are to make the code more maintainable over time, and the use of interfaces to represent concepts in code is a great way to do that.<br /><br />How would this play into something like ruby?  Well, the dependency issue is virtually non-existent from a testing point of view.  Getting a class under test is as easy as using a mocking library (Actually, the same can be said for Java in the example from Micheal&rsquo;s book).</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Refactoring Thing of the Week]]></title>
-<<<<<<< HEAD
     <link href="http://www.watkyn.com/blog/2009/04/23/Refactoring-thing-of-the-week/"/>
     <updated>2009-04-23T16:32:11-05:00</updated>
     <id>http://www.watkyn.com/blog/2009/04/23/Refactoring-thing-of-the-week</id>
-=======
-    <link href="http://watkyn.github.io/blog/2009/04/23/Refactoring-thing-of-the-week/"/>
-    <updated>2009-04-23T16:32:11-05:00</updated>
-    <id>http://watkyn.github.io/blog/2009/04/23/Refactoring-thing-of-the-week</id>
->>>>>>> 250457ca635f04d71fc0a25a88c9457b19607d3c
     <content type="html"><![CDATA[<p>Well, I don&rsquo;t have much to say about the Refactoring: Change Bidirectional Association to Unidirectional (which is what I decided to look at this week on Monday).  Sounds great!  Change it if it makes sense.<br /><br />Like Fowler says in the book, &ldquo;The most difficult part of this refactoring is checking that I can do it.&rdquo;<br /><br />If the change will not cause too many ripple effects, it can be done very nicely.  Otherwise, you may be facing a big ball of mud and it may not be feasible.</p>
 ]]></content>
   </entry>
