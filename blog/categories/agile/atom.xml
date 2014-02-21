@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Agile | . .]]></title>
+  <title><![CDATA[Category: Agile | Tony]]></title>
   <link href="http://www.watkyn.com/blog/categories/agile/atom.xml" rel="self"/>
   <link href="http://www.watkyn.com/"/>
-  <updated>2014-02-17T16:29:58-06:00</updated>
+  <updated>2014-02-21T17:29:31-06:00</updated>
   <id>http://www.watkyn.com/</id>
   <author>
     <name><![CDATA[Tony Eichelberger]]></name>
